@@ -4,7 +4,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green.svg)](https://fastapi.tiangolo.com/)
 [![RDKit](https://img.shields.io/badge/RDKit-2023.9+-yellow.svg)](https://www.rdkit.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20Only-orange.svg)](https://pytorch.org/)
-[![Tests](https://img.shields.io/badge/Tests-Passing%20(37%2F37)-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/Tests-Passing%20(52%2F52)-brightgreen.svg)]()
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)]()
 
 OlfactAI is an artificial intelligence platform designed to decode, characterize, and predict the smell profiles of chemical molecules directly from molecular structure representations (SMILES). The system functions as a software-simulated electronic nose and chemical smell intelligence suite running entirely on local CPU resources.
@@ -316,7 +316,59 @@ backend\.venv\Scripts\pytest backend/tests --cov=backend/app --cov-report=term-m
 
 ---
 
-## 8. CPU-Only Execution Guarantees
+## 8. Dataset Pipeline & Preprocessing (Phase 2)
+
+OlfactAI utilizes the unified human olfactory benchmark dataset from the official OpenPOM repository (Lee et al., *Science* 2023), comprising **4,983 molecules** and **138 binary odor descriptors**.
+
+### Pipeline Execution Commands
+
+All commands are executed from the project root using the Python 3.11 virtual environment:
+
+```powershell
+# Step 1: Acquire raw dataset from official OpenPOM source (with SHA-256 verification)
+python backend/scripts/acquire_dataset.py
+
+# Step 2: Inspect raw dataset and generate data quality audit report
+python backend/scripts/inspect_dataset.py
+
+# Step 3: Preprocess molecules, extract physicochemical descriptors & 2048-bit Morgan fingerprints
+python backend/scripts/preprocess_dataset.py
+
+# Step 4: Generate leakage-free random and Bemis-Murcko scaffold splits (70/15/15)
+python backend/scripts/create_splits.py
+
+# Step 5: Render 7 publication-ready Exploratory Data Analysis (EDA) visualizations
+python backend/scripts/generate_eda.py
+```
+
+### Dataset Artifact Structure
+```
+backend/datasets/
+├── raw/
+│   ├── curated_GS_LF_merged_4983.csv       # Original verified benchmark dataset
+│   └── raw_dataset_metadata.json           # Checksum, provenance, and license info
+│
+└── processed/
+    ├── molecules.csv                       # Canonical SMILES, formula, split tags
+    ├── molecular_features.csv              # 9 physicochemical descriptors + 2048 Morgan bits
+    ├── odor_labels.csv                     # Pure multi-label binary matrix (138 targets)
+    ├── dataset_metadata.json               # Schema, dimensions, and artifact checksums
+    ├── data_quality_report.json            # Missing values and duplicate analysis
+    ├── splits.json                         # Full molecule-level split assignments
+    ├── splits_summary.json                 # Partition sizes & scaffold leakage audit
+    └── eda/                                # Generated analytical figures
+        ├── label_frequency.png
+        ├── label_cooccurrence.png
+        ├── molecular_weight_distribution.png
+        ├── logp_distribution.png
+        ├── tpsa_distribution.png
+        ├── missing_values.png
+        └── split_label_distribution.png
+```
+
+---
+
+## 9. CPU-Only Execution Guarantees
 
 1. **PyTorch Wheel:** Configured with CPU-only binaries (`--extra-index-url https://download.pytorch.org/whl/cpu`).
 2. **Device Enforcement:** PyTorch models explicitly bind to `torch.device("cpu")`.
@@ -325,12 +377,12 @@ backend\.venv\Scripts\pytest backend/tests --cov=backend/app --cov-report=term-m
 
 ---
 
-## 9. Development Roadmap
+## 10. Development Roadmap
 
 - [x] **Phase 1: Project Initialization & Chemistry Engine (Completed)**
   - Modular architecture, FastAPI foundation, RDKit processing, automated tests.
-- [ ] **Phase 2: Olfactory Datasets & Preprocessing**
-  - Curation and parsing of public smell databases (GoodScents, Pyrfume, Leffingwell).
+- [x] **Phase 2: Dataset Acquisition, Preprocessing & EDA (Completed)**
+  - OpenPOM benchmark dataset acquisition, validation, 2048-bit Morgan FP & descriptor matrices, 7 EDA charts, leakage-free Bemis-Murcko scaffold splitting.
 - [ ] **Phase 3: Model Training & Benchmark Evaluation**
   - Multi-label smell classification benchmarks comparing Random Forest, XGBoost, and Deep MLP.
 - [ ] **Phase 4: Software-Simulated Electronic Nose & Mixture Blending**
@@ -342,7 +394,7 @@ backend\.venv\Scripts\pytest backend/tests --cov=backend/app --cov-report=term-m
 
 ---
 
-## 10. License
+## 11. License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
