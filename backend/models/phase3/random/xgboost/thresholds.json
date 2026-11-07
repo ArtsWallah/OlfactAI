@@ -1,0 +1,1260 @@
+{
+  "thresholds": [
+    0.6000000238418579,
+    0.8500000238418579,
+    0.800000011920929,
+    0.8999999761581421,
+    0.75,
+    0.75,
+    0.699999988079071,
+    0.8500000238418579,
+    0.699999988079071,
+    0.75,
+    0.800000011920929,
+    0.75,
+    0.699999988079071,
+    0.6499999761581421,
+    0.75,
+    0.550000011920929,
+    0.44999998807907104,
+    0.30000001192092896,
+    0.699999988079071,
+    0.6499999761581421,
+    0.44999998807907104,
+    0.3499999940395355,
+    0.8999999761581421,
+    0.8500000238418579,
+    0.800000011920929,
+    0.699999988079071,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.6499999761581421,
+    0.5,
+    0.30000001192092896,
+    0.800000011920929,
+    0.800000011920929,
+    0.699999988079071,
+    0.699999988079071,
+    0.699999988079071,
+    0.3499999940395355,
+    0.6000000238418579,
+    0.800000011920929,
+    0.75,
+    0.5,
+    0.550000011920929,
+    0.75,
+    0.6000000238418579,
+    0.8500000238418579,
+    0.800000011920929,
+    0.75,
+    0.8500000238418579,
+    0.5,
+    0.6000000238418579,
+    0.8500000238418579,
+    0.5,
+    0.8999999761581421,
+    0.8500000238418579,
+    0.25,
+    0.699999988079071,
+    0.800000011920929,
+    0.800000011920929,
+    0.44999998807907104,
+    0.75,
+    0.699999988079071,
+    0.8500000238418579,
+    0.6000000238418579,
+    0.800000011920929,
+    0.699999988079071,
+    0.699999988079071,
+    0.550000011920929,
+    0.8500000238418579,
+    0.5,
+    0.6000000238418579,
+    0.44999998807907104,
+    0.8500000238418579,
+    0.4000000059604645,
+    0.699999988079071,
+    0.8999999761581421,
+    0.6499999761581421,
+    0.550000011920929,
+    0.75,
+    0.699999988079071,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.8999999761581421,
+    0.8500000238418579,
+    0.8999999761581421,
+    0.699999988079071,
+    0.75,
+    0.800000011920929,
+    0.800000011920929,
+    0.550000011920929,
+    0.8999999761581421,
+    0.8500000238418579,
+    0.3499999940395355,
+    0.75,
+    0.6499999761581421,
+    0.8999999761581421,
+    0.6000000238418579,
+    0.8500000238418579,
+    0.6499999761581421,
+    0.5,
+    0.800000011920929,
+    0.5,
+    0.8999999761581421,
+    0.550000011920929,
+    0.75,
+    0.8999999761581421,
+    0.6000000238418579,
+    0.6499999761581421,
+    0.699999988079071,
+    0.699999988079071,
+    0.800000011920929,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.8500000238418579,
+    0.800000011920929,
+    0.6000000238418579,
+    0.800000011920929,
+    0.8999999761581421,
+    0.6499999761581421,
+    0.8500000238418579,
+    0.800000011920929,
+    0.75,
+    0.44999998807907104,
+    0.550000011920929,
+    0.800000011920929,
+    0.550000011920929,
+    0.5,
+    0.6499999761581421,
+    0.75,
+    0.699999988079071,
+    0.800000011920929,
+    0.8999999761581421,
+    0.44999998807907104,
+    0.75,
+    0.10000000149011612,
+    0.8500000238418579,
+    0.6000000238418579
+  ],
+  "target_labels": [
+    "alcoholic",
+    "aldehydic",
+    "alliaceous",
+    "almond",
+    "amber",
+    "animal",
+    "anisic",
+    "apple",
+    "apricot",
+    "aromatic",
+    "balsamic",
+    "banana",
+    "beefy",
+    "bergamot",
+    "berry",
+    "bitter",
+    "black currant",
+    "brandy",
+    "burnt",
+    "buttery",
+    "cabbage",
+    "camphoreous",
+    "caramellic",
+    "cedar",
+    "celery",
+    "chamomile",
+    "cheesy",
+    "cherry",
+    "chocolate",
+    "cinnamon",
+    "citrus",
+    "clean",
+    "clove",
+    "cocoa",
+    "coconut",
+    "coffee",
+    "cognac",
+    "cooked",
+    "cooling",
+    "cortex",
+    "coumarinic",
+    "creamy",
+    "cucumber",
+    "dairy",
+    "dry",
+    "earthy",
+    "ethereal",
+    "fatty",
+    "fermented",
+    "fishy",
+    "floral",
+    "fresh",
+    "fruit skin",
+    "fruity",
+    "garlic",
+    "gassy",
+    "geranium",
+    "grape",
+    "grapefruit",
+    "grassy",
+    "green",
+    "hawthorn",
+    "hay",
+    "hazelnut",
+    "herbal",
+    "honey",
+    "hyacinth",
+    "jasmin",
+    "juicy",
+    "ketonic",
+    "lactonic",
+    "lavender",
+    "leafy",
+    "leathery",
+    "lemon",
+    "lily",
+    "malty",
+    "meaty",
+    "medicinal",
+    "melon",
+    "metallic",
+    "milky",
+    "mint",
+    "muguet",
+    "mushroom",
+    "musk",
+    "musty",
+    "natural",
+    "nutty",
+    "odorless",
+    "oily",
+    "onion",
+    "orange",
+    "orangeflower",
+    "orris",
+    "ozone",
+    "peach",
+    "pear",
+    "phenolic",
+    "pine",
+    "pineapple",
+    "plum",
+    "popcorn",
+    "potato",
+    "powdery",
+    "pungent",
+    "radish",
+    "raspberry",
+    "ripe",
+    "roasted",
+    "rose",
+    "rummy",
+    "sandalwood",
+    "savory",
+    "sharp",
+    "smoky",
+    "soapy",
+    "solvent",
+    "sour",
+    "spicy",
+    "strawberry",
+    "sulfurous",
+    "sweaty",
+    "sweet",
+    "tea",
+    "terpenic",
+    "tobacco",
+    "tomato",
+    "tropical",
+    "vanilla",
+    "vegetable",
+    "vetiver",
+    "violet",
+    "warm",
+    "waxy",
+    "weedy",
+    "winey",
+    "woody"
+  ],
+  "label_threshold_map": {
+    "alcoholic": 0.6000000238418579,
+    "aldehydic": 0.8500000238418579,
+    "alliaceous": 0.800000011920929,
+    "almond": 0.8999999761581421,
+    "amber": 0.75,
+    "animal": 0.75,
+    "anisic": 0.699999988079071,
+    "apple": 0.8500000238418579,
+    "apricot": 0.699999988079071,
+    "aromatic": 0.75,
+    "balsamic": 0.800000011920929,
+    "banana": 0.75,
+    "beefy": 0.699999988079071,
+    "bergamot": 0.6499999761581421,
+    "berry": 0.75,
+    "bitter": 0.550000011920929,
+    "black currant": 0.44999998807907104,
+    "brandy": 0.30000001192092896,
+    "burnt": 0.699999988079071,
+    "buttery": 0.6499999761581421,
+    "cabbage": 0.44999998807907104,
+    "camphoreous": 0.3499999940395355,
+    "caramellic": 0.8999999761581421,
+    "cedar": 0.8500000238418579,
+    "celery": 0.800000011920929,
+    "chamomile": 0.699999988079071,
+    "cheesy": 0.8500000238418579,
+    "cherry": 0.8500000238418579,
+    "chocolate": 0.8500000238418579,
+    "cinnamon": 0.8500000238418579,
+    "citrus": 0.6499999761581421,
+    "clean": 0.5,
+    "clove": 0.30000001192092896,
+    "cocoa": 0.800000011920929,
+    "coconut": 0.800000011920929,
+    "coffee": 0.699999988079071,
+    "cognac": 0.699999988079071,
+    "cooked": 0.699999988079071,
+    "cooling": 0.3499999940395355,
+    "cortex": 0.6000000238418579,
+    "coumarinic": 0.800000011920929,
+    "creamy": 0.75,
+    "cucumber": 0.5,
+    "dairy": 0.550000011920929,
+    "dry": 0.75,
+    "earthy": 0.6000000238418579,
+    "ethereal": 0.8500000238418579,
+    "fatty": 0.800000011920929,
+    "fermented": 0.75,
+    "fishy": 0.8500000238418579,
+    "floral": 0.5,
+    "fresh": 0.6000000238418579,
+    "fruit skin": 0.8500000238418579,
+    "fruity": 0.5,
+    "garlic": 0.8999999761581421,
+    "gassy": 0.8500000238418579,
+    "geranium": 0.25,
+    "grape": 0.699999988079071,
+    "grapefruit": 0.800000011920929,
+    "grassy": 0.800000011920929,
+    "green": 0.44999998807907104,
+    "hawthorn": 0.75,
+    "hay": 0.699999988079071,
+    "hazelnut": 0.8500000238418579,
+    "herbal": 0.6000000238418579,
+    "honey": 0.800000011920929,
+    "hyacinth": 0.699999988079071,
+    "jasmin": 0.699999988079071,
+    "juicy": 0.550000011920929,
+    "ketonic": 0.8500000238418579,
+    "lactonic": 0.5,
+    "lavender": 0.6000000238418579,
+    "leafy": 0.44999998807907104,
+    "leathery": 0.8500000238418579,
+    "lemon": 0.4000000059604645,
+    "lily": 0.699999988079071,
+    "malty": 0.8999999761581421,
+    "meaty": 0.6499999761581421,
+    "medicinal": 0.550000011920929,
+    "melon": 0.75,
+    "metallic": 0.699999988079071,
+    "milky": 0.8500000238418579,
+    "mint": 0.8500000238418579,
+    "muguet": 0.8999999761581421,
+    "mushroom": 0.8500000238418579,
+    "musk": 0.8999999761581421,
+    "musty": 0.699999988079071,
+    "natural": 0.75,
+    "nutty": 0.800000011920929,
+    "odorless": 0.800000011920929,
+    "oily": 0.550000011920929,
+    "onion": 0.8999999761581421,
+    "orange": 0.8500000238418579,
+    "orangeflower": 0.3499999940395355,
+    "orris": 0.75,
+    "ozone": 0.6499999761581421,
+    "peach": 0.8999999761581421,
+    "pear": 0.6000000238418579,
+    "phenolic": 0.8500000238418579,
+    "pine": 0.6499999761581421,
+    "pineapple": 0.5,
+    "plum": 0.800000011920929,
+    "popcorn": 0.5,
+    "potato": 0.8999999761581421,
+    "powdery": 0.550000011920929,
+    "pungent": 0.75,
+    "radish": 0.8999999761581421,
+    "raspberry": 0.6000000238418579,
+    "ripe": 0.6499999761581421,
+    "roasted": 0.699999988079071,
+    "rose": 0.699999988079071,
+    "rummy": 0.800000011920929,
+    "sandalwood": 0.8500000238418579,
+    "savory": 0.8500000238418579,
+    "sharp": 0.8500000238418579,
+    "smoky": 0.800000011920929,
+    "soapy": 0.6000000238418579,
+    "solvent": 0.800000011920929,
+    "sour": 0.8999999761581421,
+    "spicy": 0.6499999761581421,
+    "strawberry": 0.8500000238418579,
+    "sulfurous": 0.800000011920929,
+    "sweaty": 0.75,
+    "sweet": 0.44999998807907104,
+    "tea": 0.550000011920929,
+    "terpenic": 0.800000011920929,
+    "tobacco": 0.550000011920929,
+    "tomato": 0.5,
+    "tropical": 0.6499999761581421,
+    "vanilla": 0.75,
+    "vegetable": 0.699999988079071,
+    "vetiver": 0.800000011920929,
+    "violet": 0.8999999761581421,
+    "warm": 0.44999998807907104,
+    "waxy": 0.75,
+    "weedy": 0.10000000149011612,
+    "winey": 0.8500000238418579,
+    "woody": 0.6000000238418579
+  },
+  "metadata": {
+    "mean_optimal_threshold": 0.6981883645057678,
+    "median_optimal_threshold": 0.75,
+    "min_optimal_threshold": 0.10000000149011612,
+    "max_optimal_threshold": 0.8999999761581421,
+    "optimized_labels_count": 138,
+    "fallback_labels_count": 0,
+    "details": {
+      "0": {
+        "support": 20,
+        "best_threshold": 0.6,
+        "best_f1": 0.75,
+        "strategy": "optimized"
+      },
+      "1": {
+        "support": 28,
+        "best_threshold": 0.85,
+        "best_f1": 0.38461539149284363,
+        "strategy": "optimized"
+      },
+      "2": {
+        "support": 18,
+        "best_threshold": 0.8,
+        "best_f1": 0.4285714328289032,
+        "strategy": "optimized"
+      },
+      "3": {
+        "support": 13,
+        "best_threshold": 0.9,
+        "best_f1": 0.47058823704719543,
+        "strategy": "optimized"
+      },
+      "4": {
+        "support": 18,
+        "best_threshold": 0.75,
+        "best_f1": 0.3921568691730499,
+        "strategy": "optimized"
+      },
+      "5": {
+        "support": 20,
+        "best_threshold": 0.75,
+        "best_f1": 0.3076923191547394,
+        "strategy": "optimized"
+      },
+      "6": {
+        "support": 14,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "7": {
+        "support": 41,
+        "best_threshold": 0.85,
+        "best_f1": 0.5185185074806213,
+        "strategy": "optimized"
+      },
+      "8": {
+        "support": 9,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.22857142984867096,
+        "strategy": "optimized"
+      },
+      "9": {
+        "support": 11,
+        "best_threshold": 0.75,
+        "best_f1": 0.17391304671764374,
+        "strategy": "optimized"
+      },
+      "10": {
+        "support": 46,
+        "best_threshold": 0.8,
+        "best_f1": 0.4810126721858978,
+        "strategy": "optimized"
+      },
+      "11": {
+        "support": 19,
+        "best_threshold": 0.75,
+        "best_f1": 0.4528301954269409,
+        "strategy": "optimized"
+      },
+      "12": {
+        "support": 4,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.3529411852359772,
+        "strategy": "optimized"
+      },
+      "13": {
+        "support": 6,
+        "best_threshold": 0.65,
+        "best_f1": 0.6000000238418579,
+        "strategy": "optimized"
+      },
+      "14": {
+        "support": 22,
+        "best_threshold": 0.75,
+        "best_f1": 0.2631579041481018,
+        "strategy": "optimized"
+      },
+      "15": {
+        "support": 12,
+        "best_threshold": 0.55,
+        "best_f1": 0.19607843458652496,
+        "strategy": "optimized"
+      },
+      "16": {
+        "support": 5,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.1111111119389534,
+        "strategy": "optimized"
+      },
+      "17": {
+        "support": 7,
+        "best_threshold": 0.30000000000000004,
+        "best_f1": 0.0923076942563057,
+        "strategy": "optimized"
+      },
+      "18": {
+        "support": 30,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.34567901492118835,
+        "strategy": "optimized"
+      },
+      "19": {
+        "support": 24,
+        "best_threshold": 0.65,
+        "best_f1": 0.37288135290145874,
+        "strategy": "optimized"
+      },
+      "20": {
+        "support": 10,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.3333333432674408,
+        "strategy": "optimized"
+      },
+      "21": {
+        "support": 17,
+        "best_threshold": 0.35,
+        "best_f1": 0.33734938502311707,
+        "strategy": "optimized"
+      },
+      "22": {
+        "support": 27,
+        "best_threshold": 0.9,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "23": {
+        "support": 7,
+        "best_threshold": 0.85,
+        "best_f1": 0.3636363744735718,
+        "strategy": "optimized"
+      },
+      "24": {
+        "support": 5,
+        "best_threshold": 0.8,
+        "best_f1": 0.2222222238779068,
+        "strategy": "optimized"
+      },
+      "25": {
+        "support": 3,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.25,
+        "strategy": "optimized"
+      },
+      "26": {
+        "support": 29,
+        "best_threshold": 0.85,
+        "best_f1": 0.5,
+        "strategy": "optimized"
+      },
+      "27": {
+        "support": 12,
+        "best_threshold": 0.85,
+        "best_f1": 0.6363636255264282,
+        "strategy": "optimized"
+      },
+      "28": {
+        "support": 9,
+        "best_threshold": 0.85,
+        "best_f1": 0.3333333432674408,
+        "strategy": "optimized"
+      },
+      "29": {
+        "support": 10,
+        "best_threshold": 0.85,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "30": {
+        "support": 54,
+        "best_threshold": 0.65,
+        "best_f1": 0.5669291615486145,
+        "strategy": "optimized"
+      },
+      "31": {
+        "support": 17,
+        "best_threshold": 0.5,
+        "best_f1": 0.13333334028720856,
+        "strategy": "optimized"
+      },
+      "32": {
+        "support": 7,
+        "best_threshold": 0.30000000000000004,
+        "best_f1": 0.4761904776096344,
+        "strategy": "optimized"
+      },
+      "33": {
+        "support": 20,
+        "best_threshold": 0.8,
+        "best_f1": 0.47058823704719543,
+        "strategy": "optimized"
+      },
+      "34": {
+        "support": 18,
+        "best_threshold": 0.8,
+        "best_f1": 0.6857143044471741,
+        "strategy": "optimized"
+      },
+      "35": {
+        "support": 24,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.5199999809265137,
+        "strategy": "optimized"
+      },
+      "36": {
+        "support": 22,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.6037735939025879,
+        "strategy": "optimized"
+      },
+      "37": {
+        "support": 13,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.2916666567325592,
+        "strategy": "optimized"
+      },
+      "38": {
+        "support": 15,
+        "best_threshold": 0.35,
+        "best_f1": 0.2461538463830948,
+        "strategy": "optimized"
+      },
+      "39": {
+        "support": 11,
+        "best_threshold": 0.6,
+        "best_f1": 0.1764705926179886,
+        "strategy": "optimized"
+      },
+      "40": {
+        "support": 10,
+        "best_threshold": 0.8,
+        "best_f1": 0.6666666865348816,
+        "strategy": "optimized"
+      },
+      "41": {
+        "support": 23,
+        "best_threshold": 0.75,
+        "best_f1": 0.3499999940395355,
+        "strategy": "optimized"
+      },
+      "42": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.2666666805744171,
+        "strategy": "optimized"
+      },
+      "43": {
+        "support": 13,
+        "best_threshold": 0.55,
+        "best_f1": 0.25974026322364807,
+        "strategy": "optimized"
+      },
+      "44": {
+        "support": 25,
+        "best_threshold": 0.75,
+        "best_f1": 0.23999999463558197,
+        "strategy": "optimized"
+      },
+      "45": {
+        "support": 57,
+        "best_threshold": 0.6,
+        "best_f1": 0.36800000071525574,
+        "strategy": "optimized"
+      },
+      "46": {
+        "support": 35,
+        "best_threshold": 0.85,
+        "best_f1": 0.5,
+        "strategy": "optimized"
+      },
+      "47": {
+        "support": 100,
+        "best_threshold": 0.8,
+        "best_f1": 0.6162790656089783,
+        "strategy": "optimized"
+      },
+      "48": {
+        "support": 25,
+        "best_threshold": 0.75,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "49": {
+        "support": 12,
+        "best_threshold": 0.85,
+        "best_f1": 0.30000001192092896,
+        "strategy": "optimized"
+      },
+      "50": {
+        "support": 163,
+        "best_threshold": 0.5,
+        "best_f1": 0.5995085835456848,
+        "strategy": "optimized"
+      },
+      "51": {
+        "support": 87,
+        "best_threshold": 0.6,
+        "best_f1": 0.4057970941066742,
+        "strategy": "optimized"
+      },
+      "52": {
+        "support": 6,
+        "best_threshold": 0.85,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "53": {
+        "support": 279,
+        "best_threshold": 0.5,
+        "best_f1": 0.7126865386962891,
+        "strategy": "optimized"
+      },
+      "54": {
+        "support": 15,
+        "best_threshold": 0.9,
+        "best_f1": 0.529411792755127,
+        "strategy": "optimized"
+      },
+      "55": {
+        "support": 4,
+        "best_threshold": 0.85,
+        "best_f1": 0.5,
+        "strategy": "optimized"
+      },
+      "56": {
+        "support": 9,
+        "best_threshold": 0.25,
+        "best_f1": 0.11764705926179886,
+        "strategy": "optimized"
+      },
+      "57": {
+        "support": 16,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.3030303120613098,
+        "strategy": "optimized"
+      },
+      "58": {
+        "support": 14,
+        "best_threshold": 0.8,
+        "best_f1": 0.27272728085517883,
+        "strategy": "optimized"
+      },
+      "59": {
+        "support": 8,
+        "best_threshold": 0.8,
+        "best_f1": 0.2666666805744171,
+        "strategy": "optimized"
+      },
+      "60": {
+        "support": 219,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.6201834678649902,
+        "strategy": "optimized"
+      },
+      "61": {
+        "support": 3,
+        "best_threshold": 0.75,
+        "best_f1": 0.6000000238418579,
+        "strategy": "optimized"
+      },
+      "62": {
+        "support": 7,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.2857142984867096,
+        "strategy": "optimized"
+      },
+      "63": {
+        "support": 9,
+        "best_threshold": 0.85,
+        "best_f1": 0.3333333432674408,
+        "strategy": "optimized"
+      },
+      "64": {
+        "support": 113,
+        "best_threshold": 0.6,
+        "best_f1": 0.4333333373069763,
+        "strategy": "optimized"
+      },
+      "65": {
+        "support": 22,
+        "best_threshold": 0.8,
+        "best_f1": 0.3589743673801422,
+        "strategy": "optimized"
+      },
+      "66": {
+        "support": 9,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.1538461595773697,
+        "strategy": "optimized"
+      },
+      "67": {
+        "support": 12,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "68": {
+        "support": 4,
+        "best_threshold": 0.55,
+        "best_f1": 0.07999999821186066,
+        "strategy": "optimized"
+      },
+      "69": {
+        "support": 8,
+        "best_threshold": 0.85,
+        "best_f1": 0.4615384638309479,
+        "strategy": "optimized"
+      },
+      "70": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.46666666865348816,
+        "strategy": "optimized"
+      },
+      "71": {
+        "support": 6,
+        "best_threshold": 0.6,
+        "best_f1": 0.23529411852359772,
+        "strategy": "optimized"
+      },
+      "72": {
+        "support": 30,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "73": {
+        "support": 6,
+        "best_threshold": 0.85,
+        "best_f1": 0.2666666805744171,
+        "strategy": "optimized"
+      },
+      "74": {
+        "support": 15,
+        "best_threshold": 0.4,
+        "best_f1": 0.4399999976158142,
+        "strategy": "optimized"
+      },
+      "75": {
+        "support": 10,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.4375,
+        "strategy": "optimized"
+      },
+      "76": {
+        "support": 4,
+        "best_threshold": 0.9,
+        "best_f1": 0.6666666865348816,
+        "strategy": "optimized"
+      },
+      "77": {
+        "support": 48,
+        "best_threshold": 0.65,
+        "best_f1": 0.5789473652839661,
+        "strategy": "optimized"
+      },
+      "78": {
+        "support": 14,
+        "best_threshold": 0.55,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "79": {
+        "support": 20,
+        "best_threshold": 0.75,
+        "best_f1": 0.2545454502105713,
+        "strategy": "optimized"
+      },
+      "80": {
+        "support": 22,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.21052631735801697,
+        "strategy": "optimized"
+      },
+      "81": {
+        "support": 8,
+        "best_threshold": 0.85,
+        "best_f1": 0.4615384638309479,
+        "strategy": "optimized"
+      },
+      "82": {
+        "support": 31,
+        "best_threshold": 0.85,
+        "best_f1": 0.40740740299224854,
+        "strategy": "optimized"
+      },
+      "83": {
+        "support": 10,
+        "best_threshold": 0.9,
+        "best_f1": 0.31578946113586426,
+        "strategy": "optimized"
+      },
+      "84": {
+        "support": 19,
+        "best_threshold": 0.85,
+        "best_f1": 0.3333333432674408,
+        "strategy": "optimized"
+      },
+      "85": {
+        "support": 13,
+        "best_threshold": 0.9,
+        "best_f1": 0.695652186870575,
+        "strategy": "optimized"
+      },
+      "86": {
+        "support": 35,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.23999999463558197,
+        "strategy": "optimized"
+      },
+      "87": {
+        "support": 12,
+        "best_threshold": 0.75,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "88": {
+        "support": 57,
+        "best_threshold": 0.8,
+        "best_f1": 0.5111111402511597,
+        "strategy": "optimized"
+      },
+      "89": {
+        "support": 37,
+        "best_threshold": 0.8,
+        "best_f1": 0.7631579041481018,
+        "strategy": "optimized"
+      },
+      "90": {
+        "support": 69,
+        "best_threshold": 0.55,
+        "best_f1": 0.4419889450073242,
+        "strategy": "optimized"
+      },
+      "91": {
+        "support": 22,
+        "best_threshold": 0.9,
+        "best_f1": 0.6666666865348816,
+        "strategy": "optimized"
+      },
+      "92": {
+        "support": 13,
+        "best_threshold": 0.85,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "93": {
+        "support": 5,
+        "best_threshold": 0.35,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "94": {
+        "support": 11,
+        "best_threshold": 0.75,
+        "best_f1": 0.27272728085517883,
+        "strategy": "optimized"
+      },
+      "95": {
+        "support": 10,
+        "best_threshold": 0.65,
+        "best_f1": 0.31578946113586426,
+        "strategy": "optimized"
+      },
+      "96": {
+        "support": 9,
+        "best_threshold": 0.9,
+        "best_f1": 0.3076923191547394,
+        "strategy": "optimized"
+      },
+      "97": {
+        "support": 17,
+        "best_threshold": 0.6,
+        "best_f1": 0.28985506296157837,
+        "strategy": "optimized"
+      },
+      "98": {
+        "support": 25,
+        "best_threshold": 0.85,
+        "best_f1": 0.6222222447395325,
+        "strategy": "optimized"
+      },
+      "99": {
+        "support": 18,
+        "best_threshold": 0.65,
+        "best_f1": 0.6153846383094788,
+        "strategy": "optimized"
+      },
+      "100": {
+        "support": 24,
+        "best_threshold": 0.5,
+        "best_f1": 0.3711340129375458,
+        "strategy": "optimized"
+      },
+      "101": {
+        "support": 9,
+        "best_threshold": 0.8,
+        "best_f1": 0.23529411852359772,
+        "strategy": "optimized"
+      },
+      "102": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.4615384638309479,
+        "strategy": "optimized"
+      },
+      "103": {
+        "support": 8,
+        "best_threshold": 0.9,
+        "best_f1": 0.25,
+        "strategy": "optimized"
+      },
+      "104": {
+        "support": 22,
+        "best_threshold": 0.55,
+        "best_f1": 0.23076923191547394,
+        "strategy": "optimized"
+      },
+      "105": {
+        "support": 33,
+        "best_threshold": 0.75,
+        "best_f1": 0.34210526943206787,
+        "strategy": "optimized"
+      },
+      "106": {
+        "support": 3,
+        "best_threshold": 0.9,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "107": {
+        "support": 5,
+        "best_threshold": 0.6,
+        "best_f1": 0.10000000149011612,
+        "strategy": "optimized"
+      },
+      "108": {
+        "support": 7,
+        "best_threshold": 0.65,
+        "best_f1": 0.1764705926179886,
+        "strategy": "optimized"
+      },
+      "109": {
+        "support": 48,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.5486725568771362,
+        "strategy": "optimized"
+      },
+      "110": {
+        "support": 50,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.4954128563404083,
+        "strategy": "optimized"
+      },
+      "111": {
+        "support": 19,
+        "best_threshold": 0.8,
+        "best_f1": 0.3636363744735718,
+        "strategy": "optimized"
+      },
+      "112": {
+        "support": 6,
+        "best_threshold": 0.85,
+        "best_f1": 0.4444444477558136,
+        "strategy": "optimized"
+      },
+      "113": {
+        "support": 16,
+        "best_threshold": 0.85,
+        "best_f1": 0.3125,
+        "strategy": "optimized"
+      },
+      "114": {
+        "support": 14,
+        "best_threshold": 0.85,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "115": {
+        "support": 14,
+        "best_threshold": 0.8,
+        "best_f1": 0.4615384638309479,
+        "strategy": "optimized"
+      },
+      "116": {
+        "support": 11,
+        "best_threshold": 0.6,
+        "best_f1": 0.1111111119389534,
+        "strategy": "optimized"
+      },
+      "117": {
+        "support": 5,
+        "best_threshold": 0.8,
+        "best_f1": 0.4000000059604645,
+        "strategy": "optimized"
+      },
+      "118": {
+        "support": 8,
+        "best_threshold": 0.9,
+        "best_f1": 0.4444444477558136,
+        "strategy": "optimized"
+      },
+      "119": {
+        "support": 61,
+        "best_threshold": 0.65,
+        "best_f1": 0.4122137427330017,
+        "strategy": "optimized"
+      },
+      "120": {
+        "support": 7,
+        "best_threshold": 0.85,
+        "best_f1": 0.2222222238779068,
+        "strategy": "optimized"
+      },
+      "121": {
+        "support": 55,
+        "best_threshold": 0.8,
+        "best_f1": 0.7731092572212219,
+        "strategy": "optimized"
+      },
+      "122": {
+        "support": 10,
+        "best_threshold": 0.75,
+        "best_f1": 0.375,
+        "strategy": "optimized"
+      },
+      "123": {
+        "support": 188,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.5323193669319153,
+        "strategy": "optimized"
+      },
+      "124": {
+        "support": 13,
+        "best_threshold": 0.55,
+        "best_f1": 0.1666666716337204,
+        "strategy": "optimized"
+      },
+      "125": {
+        "support": 10,
+        "best_threshold": 0.8,
+        "best_f1": 0.5882353186607361,
+        "strategy": "optimized"
+      },
+      "126": {
+        "support": 18,
+        "best_threshold": 0.55,
+        "best_f1": 0.28985506296157837,
+        "strategy": "optimized"
+      },
+      "127": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.14814814925193787,
+        "strategy": "optimized"
+      },
+      "128": {
+        "support": 60,
+        "best_threshold": 0.65,
+        "best_f1": 0.375,
+        "strategy": "optimized"
+      },
+      "129": {
+        "support": 14,
+        "best_threshold": 0.75,
+        "best_f1": 0.3478260934352875,
+        "strategy": "optimized"
+      },
+      "130": {
+        "support": 44,
+        "best_threshold": 0.7000000000000001,
+        "best_f1": 0.3564356565475464,
+        "strategy": "optimized"
+      },
+      "131": {
+        "support": 4,
+        "best_threshold": 0.8,
+        "best_f1": 0.2222222238779068,
+        "strategy": "optimized"
+      },
+      "132": {
+        "support": 5,
+        "best_threshold": 0.9,
+        "best_f1": 0.2222222238779068,
+        "strategy": "optimized"
+      },
+      "133": {
+        "support": 15,
+        "best_threshold": 0.45000000000000007,
+        "best_f1": 0.07058823853731155,
+        "strategy": "optimized"
+      },
+      "134": {
+        "support": 81,
+        "best_threshold": 0.75,
+        "best_f1": 0.5357142686843872,
+        "strategy": "optimized"
+      },
+      "135": {
+        "support": 6,
+        "best_threshold": 0.1,
+        "best_f1": 0.02142857201397419,
+        "strategy": "optimized"
+      },
+      "136": {
+        "support": 24,
+        "best_threshold": 0.85,
+        "best_f1": 0.38461539149284363,
+        "strategy": "optimized"
+      },
+      "137": {
+        "support": 106,
+        "best_threshold": 0.6,
+        "best_f1": 0.5630252361297607,
+        "strategy": "optimized"
+      }
+    }
+  }
+}

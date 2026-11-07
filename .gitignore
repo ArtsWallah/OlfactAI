@@ -65,12 +65,14 @@ coverage.xml
 *-checkpoint.ipynb
 
 # Machine Learning & Model Artifacts
-backend/models/*.pkl
-backend/models/*.joblib
-backend/models/*.pt
-backend/models/*.pth
-backend/models/*.onnx
-backend/models/*.bin
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.bin
+backend/models/**/*.joblib
+backend/models/**/*.pt
 !backend/models/.gitkeep
 
 # Datasets (Large Data Files)

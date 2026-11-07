@@ -1,0 +1,1260 @@
+{
+  "thresholds": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.10000000149011612,
+    0.5,
+    0.5,
+    0.20000000298023224,
+    0.10000000149011612,
+    0.5,
+    0.3499999940395355,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.25,
+    0.5,
+    0.5,
+    0.5,
+    0.10000000149011612,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.25,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.10000000149011612
+  ],
+  "target_labels": [
+    "alcoholic",
+    "aldehydic",
+    "alliaceous",
+    "almond",
+    "amber",
+    "animal",
+    "anisic",
+    "apple",
+    "apricot",
+    "aromatic",
+    "balsamic",
+    "banana",
+    "beefy",
+    "bergamot",
+    "berry",
+    "bitter",
+    "black currant",
+    "brandy",
+    "burnt",
+    "buttery",
+    "cabbage",
+    "camphoreous",
+    "caramellic",
+    "cedar",
+    "celery",
+    "chamomile",
+    "cheesy",
+    "cherry",
+    "chocolate",
+    "cinnamon",
+    "citrus",
+    "clean",
+    "clove",
+    "cocoa",
+    "coconut",
+    "coffee",
+    "cognac",
+    "cooked",
+    "cooling",
+    "cortex",
+    "coumarinic",
+    "creamy",
+    "cucumber",
+    "dairy",
+    "dry",
+    "earthy",
+    "ethereal",
+    "fatty",
+    "fermented",
+    "fishy",
+    "floral",
+    "fresh",
+    "fruit skin",
+    "fruity",
+    "garlic",
+    "gassy",
+    "geranium",
+    "grape",
+    "grapefruit",
+    "grassy",
+    "green",
+    "hawthorn",
+    "hay",
+    "hazelnut",
+    "herbal",
+    "honey",
+    "hyacinth",
+    "jasmin",
+    "juicy",
+    "ketonic",
+    "lactonic",
+    "lavender",
+    "leafy",
+    "leathery",
+    "lemon",
+    "lily",
+    "malty",
+    "meaty",
+    "medicinal",
+    "melon",
+    "metallic",
+    "milky",
+    "mint",
+    "muguet",
+    "mushroom",
+    "musk",
+    "musty",
+    "natural",
+    "nutty",
+    "odorless",
+    "oily",
+    "onion",
+    "orange",
+    "orangeflower",
+    "orris",
+    "ozone",
+    "peach",
+    "pear",
+    "phenolic",
+    "pine",
+    "pineapple",
+    "plum",
+    "popcorn",
+    "potato",
+    "powdery",
+    "pungent",
+    "radish",
+    "raspberry",
+    "ripe",
+    "roasted",
+    "rose",
+    "rummy",
+    "sandalwood",
+    "savory",
+    "sharp",
+    "smoky",
+    "soapy",
+    "solvent",
+    "sour",
+    "spicy",
+    "strawberry",
+    "sulfurous",
+    "sweaty",
+    "sweet",
+    "tea",
+    "terpenic",
+    "tobacco",
+    "tomato",
+    "tropical",
+    "vanilla",
+    "vegetable",
+    "vetiver",
+    "violet",
+    "warm",
+    "waxy",
+    "weedy",
+    "winey",
+    "woody"
+  ],
+  "label_threshold_map": {
+    "alcoholic": 0.5,
+    "aldehydic": 0.5,
+    "alliaceous": 0.5,
+    "almond": 0.5,
+    "amber": 0.5,
+    "animal": 0.5,
+    "anisic": 0.5,
+    "apple": 0.5,
+    "apricot": 0.5,
+    "aromatic": 0.5,
+    "balsamic": 0.5,
+    "banana": 0.5,
+    "beefy": 0.5,
+    "bergamot": 0.5,
+    "berry": 0.5,
+    "bitter": 0.5,
+    "black currant": 0.5,
+    "brandy": 0.5,
+    "burnt": 0.5,
+    "buttery": 0.5,
+    "cabbage": 0.5,
+    "camphoreous": 0.5,
+    "caramellic": 0.5,
+    "cedar": 0.5,
+    "celery": 0.5,
+    "chamomile": 0.5,
+    "cheesy": 0.5,
+    "cherry": 0.5,
+    "chocolate": 0.5,
+    "cinnamon": 0.5,
+    "citrus": 0.5,
+    "clean": 0.5,
+    "clove": 0.5,
+    "cocoa": 0.5,
+    "coconut": 0.5,
+    "coffee": 0.5,
+    "cognac": 0.5,
+    "cooked": 0.5,
+    "cooling": 0.5,
+    "cortex": 0.5,
+    "coumarinic": 0.5,
+    "creamy": 0.5,
+    "cucumber": 0.5,
+    "dairy": 0.5,
+    "dry": 0.5,
+    "earthy": 0.5,
+    "ethereal": 0.5,
+    "fatty": 0.10000000149011612,
+    "fermented": 0.5,
+    "fishy": 0.5,
+    "floral": 0.20000000298023224,
+    "fresh": 0.10000000149011612,
+    "fruit skin": 0.5,
+    "fruity": 0.3499999940395355,
+    "garlic": 0.5,
+    "gassy": 0.5,
+    "geranium": 0.5,
+    "grape": 0.5,
+    "grapefruit": 0.5,
+    "grassy": 0.5,
+    "green": 0.25,
+    "hawthorn": 0.5,
+    "hay": 0.5,
+    "hazelnut": 0.5,
+    "herbal": 0.10000000149011612,
+    "honey": 0.5,
+    "hyacinth": 0.5,
+    "jasmin": 0.5,
+    "juicy": 0.5,
+    "ketonic": 0.5,
+    "lactonic": 0.5,
+    "lavender": 0.5,
+    "leafy": 0.5,
+    "leathery": 0.5,
+    "lemon": 0.5,
+    "lily": 0.5,
+    "malty": 0.5,
+    "meaty": 0.5,
+    "medicinal": 0.5,
+    "melon": 0.5,
+    "metallic": 0.5,
+    "milky": 0.5,
+    "mint": 0.5,
+    "muguet": 0.5,
+    "mushroom": 0.5,
+    "musk": 0.5,
+    "musty": 0.5,
+    "natural": 0.5,
+    "nutty": 0.5,
+    "odorless": 0.5,
+    "oily": 0.5,
+    "onion": 0.5,
+    "orange": 0.5,
+    "orangeflower": 0.5,
+    "orris": 0.5,
+    "ozone": 0.5,
+    "peach": 0.5,
+    "pear": 0.5,
+    "phenolic": 0.5,
+    "pine": 0.5,
+    "pineapple": 0.5,
+    "plum": 0.5,
+    "popcorn": 0.5,
+    "potato": 0.5,
+    "powdery": 0.5,
+    "pungent": 0.5,
+    "radish": 0.5,
+    "raspberry": 0.5,
+    "ripe": 0.5,
+    "roasted": 0.5,
+    "rose": 0.5,
+    "rummy": 0.5,
+    "sandalwood": 0.5,
+    "savory": 0.5,
+    "sharp": 0.5,
+    "smoky": 0.5,
+    "soapy": 0.5,
+    "solvent": 0.5,
+    "sour": 0.5,
+    "spicy": 0.5,
+    "strawberry": 0.5,
+    "sulfurous": 0.5,
+    "sweaty": 0.5,
+    "sweet": 0.25,
+    "tea": 0.5,
+    "terpenic": 0.5,
+    "tobacco": 0.5,
+    "tomato": 0.5,
+    "tropical": 0.5,
+    "vanilla": 0.5,
+    "vegetable": 0.5,
+    "vetiver": 0.5,
+    "violet": 0.5,
+    "warm": 0.5,
+    "waxy": 0.5,
+    "weedy": 0.5,
+    "winey": 0.5,
+    "woody": 0.10000000149011612
+  },
+  "metadata": {
+    "mean_optimal_threshold": 0.48152172565460205,
+    "median_optimal_threshold": 0.5,
+    "min_optimal_threshold": 0.10000000149011612,
+    "max_optimal_threshold": 0.5,
+    "optimized_labels_count": 8,
+    "fallback_labels_count": 130,
+    "details": {
+      "0": {
+        "support": 20,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "1": {
+        "support": 28,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "2": {
+        "support": 18,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "3": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "4": {
+        "support": 18,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "5": {
+        "support": 20,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "6": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "7": {
+        "support": 41,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "8": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "9": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "10": {
+        "support": 46,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "11": {
+        "support": 19,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "12": {
+        "support": 4,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "13": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "14": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "15": {
+        "support": 12,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "16": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "17": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "18": {
+        "support": 30,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "19": {
+        "support": 24,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "20": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "21": {
+        "support": 17,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "22": {
+        "support": 27,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "23": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "24": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "25": {
+        "support": 3,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "26": {
+        "support": 29,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "27": {
+        "support": 12,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "28": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "29": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "30": {
+        "support": 54,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "31": {
+        "support": 17,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "32": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "33": {
+        "support": 20,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "34": {
+        "support": 18,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "35": {
+        "support": 24,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "36": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "37": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "38": {
+        "support": 15,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "39": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "40": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "41": {
+        "support": 23,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "42": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "43": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "44": {
+        "support": 25,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "45": {
+        "support": 57,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "46": {
+        "support": 35,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "47": {
+        "support": 100,
+        "best_threshold": 0.1,
+        "best_f1": 0.23612751066684723,
+        "strategy": "optimized"
+      },
+      "48": {
+        "support": 25,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "49": {
+        "support": 12,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "50": {
+        "support": 163,
+        "best_threshold": 0.2,
+        "best_f1": 0.3582417666912079,
+        "strategy": "optimized"
+      },
+      "51": {
+        "support": 87,
+        "best_threshold": 0.1,
+        "best_f1": 0.20863309502601624,
+        "strategy": "optimized"
+      },
+      "52": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "53": {
+        "support": 279,
+        "best_threshold": 0.35,
+        "best_f1": 0.5438596606254578,
+        "strategy": "optimized"
+      },
+      "54": {
+        "support": 15,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "55": {
+        "support": 4,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "56": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "57": {
+        "support": 16,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "58": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "59": {
+        "support": 8,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "60": {
+        "support": 219,
+        "best_threshold": 0.25,
+        "best_f1": 0.4534161388874054,
+        "strategy": "optimized"
+      },
+      "61": {
+        "support": 3,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "62": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "63": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "64": {
+        "support": 113,
+        "best_threshold": 0.1,
+        "best_f1": 0.262790709733963,
+        "strategy": "optimized"
+      },
+      "65": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "66": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "67": {
+        "support": 12,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "68": {
+        "support": 4,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "69": {
+        "support": 8,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "70": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "71": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "72": {
+        "support": 30,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "73": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "74": {
+        "support": 15,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "75": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "76": {
+        "support": 4,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "77": {
+        "support": 48,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "78": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "79": {
+        "support": 20,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "80": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "81": {
+        "support": 8,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "82": {
+        "support": 31,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "83": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "84": {
+        "support": 19,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "85": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "86": {
+        "support": 35,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "87": {
+        "support": 12,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "88": {
+        "support": 57,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "89": {
+        "support": 37,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "90": {
+        "support": 69,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "91": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "92": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "93": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "94": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "95": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "96": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "97": {
+        "support": 17,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "98": {
+        "support": 25,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "99": {
+        "support": 18,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "100": {
+        "support": 24,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "101": {
+        "support": 9,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "102": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "103": {
+        "support": 8,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "104": {
+        "support": 22,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "105": {
+        "support": 33,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "106": {
+        "support": 3,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "107": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "108": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "109": {
+        "support": 48,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "110": {
+        "support": 50,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "111": {
+        "support": 19,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "112": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "113": {
+        "support": 16,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "114": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "115": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "116": {
+        "support": 11,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "117": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "118": {
+        "support": 8,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "119": {
+        "support": 61,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "120": {
+        "support": 7,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "121": {
+        "support": 55,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "122": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "123": {
+        "support": 188,
+        "best_threshold": 0.25,
+        "best_f1": 0.4021390378475189,
+        "strategy": "optimized"
+      },
+      "124": {
+        "support": 13,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "125": {
+        "support": 10,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "126": {
+        "support": 18,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "127": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "128": {
+        "support": 60,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "129": {
+        "support": 14,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "130": {
+        "support": 44,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "131": {
+        "support": 4,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "132": {
+        "support": 5,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "133": {
+        "support": 15,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "134": {
+        "support": 81,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "135": {
+        "support": 6,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "136": {
+        "support": 24,
+        "best_threshold": 0.5,
+        "best_f1": 0.0,
+        "strategy": "fallback_zero_f1"
+      },
+      "137": {
+        "support": 106,
+        "best_threshold": 0.1,
+        "best_f1": 0.24853459000587463,
+        "strategy": "optimized"
+      }
+    }
+  }
+}
