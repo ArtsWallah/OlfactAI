@@ -148,6 +148,9 @@ PyTorch CPU MLP is the optimal deployment candidate for production services:
 - It serves predictions in **29.5 milliseconds** for a batch of 748 molecules (**~39 microseconds per molecule**), representing a **93.8x lower latency** than XGBoost.
 - It delivers competitive discrimination (ROC-AUC **0.8082** vs **0.8064**).
 
+> [!NOTE]
+> **Latency Measurement Clarification:** The figures above represent core model matrix forward passes on vectorized batch inputs. In an end-to-end API pipeline, single-molecule inference includes RDKit feature generation (~1.2 ms) and feature scaling alignment (~4.2 ms), yielding an end-to-end single-molecule latency of approximately **5.8 ms for PyTorch MLP** vs. **~238 ms for XGBoost**.
+
 ---
 
 ## 8. Odor Descriptor Performance Breakdown
@@ -157,7 +160,8 @@ Analysis of per-label performance on the scaffold split test set reveals stark d
 ### 8.1 Top Performing Descriptors (High Chemical Determinism)
 These descriptors correlate strongly with well-defined, local chemical motifs:
 
-1. **`ketonic`** (F1 = 1.0000, ROC-AUC = 1.0000): Dominated by specific carbonyl functional group positions.
+1. **`ketonic`\*** (Support: 1, F1 = 1.0000, Prec: 1.0000, Rec: 1.0000, ROC-AUC = 1.0000, PR-AUC = 1.0000): Dominated by specific carbonyl functional group positions.  
+   *\*Caveat: The F1 of 1.0000 is an empirical artifact of $N=1$ positive test sample (`MOL_02258`, Cycloheptanone: TP=1, FP=0, FN=0, TN=747) and does not establish generalizability across all ketones.*
 2. **`sulfurous`** (Support: 33, F1 = 0.6053, Prec: 0.5349, Rec: 0.6970, ROC-AUC = 0.9702, PR-AUC = 0.5871): Unambiguously linked to organosulfur moieties (thiols, thioethers, disulfides).
 3. **`alliaceous`** (Support: 6, F1 = 0.5455, Prec: 0.6000, Rec: 0.5000, ROC-AUC = 0.9681, PR-AUC = 0.5761): Garlic/onion notes governed by allyl sulfide substructures.
 4. **`roasted`** (Support: 26, F1 = 0.5556, Prec: 0.5357, Rec: 0.5769, ROC-AUC = 0.9493, PR-AUC = 0.5471): Pyrazine, thiazole, and pyrrole ring systems.
