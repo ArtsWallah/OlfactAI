@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables
+.env.local
+.env.*.local
+!.env.example
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*-checkpoint.ipynb
+
+# Machine Learning & Model Artifacts
+backend/models/*.pkl
+backend/models/*.joblib
+backend/models/*.pt
+backend/models/*.pth
+backend/models/*.onnx
+backend/models/*.bin
+!backend/models/.gitkeep
+
+# Datasets (Large Data Files)
+backend/datasets/raw/*
+backend/datasets/processed/*
+backend/datasets/external/*
+!backend/datasets/raw/.gitkeep
+!backend/datasets/processed/.gitkeep
+!backend/datasets/external/.gitkeep
+*.csv
+*.parquet
+*.h5
+*.hdf5
+*.sdf
+*.mol2
+
+# Frontend / Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+.npm
+.yarn/
+
+# Logs
+*.log
+logs/
+backend/logs/
+

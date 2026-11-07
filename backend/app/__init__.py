@@ -1,0 +1,2 @@
+"""OlfactAI backend application package."""
+
