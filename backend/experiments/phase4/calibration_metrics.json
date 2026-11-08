@@ -1,0 +1,290 @@
+{
+  "random": {
+    "temperature": 0.91283118724823,
+    "calibration_metrics": {
+      "uncalibrated_brier": 0.12811358572117648,
+      "calibrated_brier": 0.12798393857430684,
+      "brier_reduction_pct": 0.10119703241450066,
+      "uncalibrated_ece": 0.23878663754852023,
+      "calibrated_ece": 0.2328824007737703,
+      "ece_reduction_pct": 2.4725993193610876,
+      "reliability_diagram_bins": [
+        {
+          "bin_idx": 0,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 39782,
+          "weight": 0.38539486941021467,
+          "avg_confidence": 0.024691587935173412,
+          "empirical_accuracy": 0.0018852747473731839,
+          "calibration_gap": 0.02280631318780023
+        },
+        {
+          "bin_idx": 1,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 12763,
+          "weight": 0.12364372626520964,
+          "avg_confidence": 0.1472921552671998,
+          "empirical_accuracy": 0.005641306902765807,
+          "calibration_gap": 0.14165084836443398
+        },
+        {
+          "bin_idx": 2,
+          "range": [
+            0.2,
+            0.30000000000000004
+          ],
+          "count": 10357,
+          "weight": 0.10033519336588391,
+          "avg_confidence": 0.24927672364829853,
+          "empirical_accuracy": 0.01052428309355991,
+          "calibration_gap": 0.23875244055473863
+        },
+        {
+          "bin_idx": 3,
+          "range": [
+            0.30000000000000004,
+            0.4
+          ],
+          "count": 9300,
+          "weight": 0.0900953266682167,
+          "avg_confidence": 0.3488460257104648,
+          "empirical_accuracy": 0.02032258064516129,
+          "calibration_gap": 0.3285234450653035
+        },
+        {
+          "bin_idx": 4,
+          "range": [
+            0.4,
+            0.5
+          ],
+          "count": 8589,
+          "weight": 0.08320739362938852,
+          "avg_confidence": 0.4493944767343386,
+          "empirical_accuracy": 0.03551053673303062,
+          "calibration_gap": 0.41388394000130796
+        },
+        {
+          "bin_idx": 5,
+          "range": [
+            0.5,
+            0.6000000000000001
+          ],
+          "count": 7889,
+          "weight": 0.07642602495543672,
+          "avg_confidence": 0.5490320614270043,
+          "empirical_accuracy": 0.06439345924705286,
+          "calibration_gap": 0.48463860217995147
+        },
+        {
+          "bin_idx": 6,
+          "range": [
+            0.6000000000000001,
+            0.7000000000000001
+          ],
+          "count": 6271,
+          "weight": 0.06075137564907386,
+          "avg_confidence": 0.647225030784762,
+          "empirical_accuracy": 0.09950566097911019,
+          "calibration_gap": 0.5477193698056518
+        },
+        {
+          "bin_idx": 7,
+          "range": [
+            0.7000000000000001,
+            0.8
+          ],
+          "count": 4328,
+          "weight": 0.04192823374409052,
+          "avg_confidence": 0.7464412785722235,
+          "empirical_accuracy": 0.1487985212569316,
+          "calibration_gap": 0.5976427573152919
+        },
+        {
+          "bin_idx": 8,
+          "range": [
+            0.8,
+            0.9
+          ],
+          "count": 2592,
+          "weight": 0.025110439432690073,
+          "avg_confidence": 0.8448553872467192,
+          "empirical_accuracy": 0.21103395061728394,
+          "calibration_gap": 0.6338214366294352
+        },
+        {
+          "bin_idx": 9,
+          "range": [
+            0.9,
+            1.0
+          ],
+          "count": 1353,
+          "weight": 0.013107416879795396,
+          "avg_confidence": 0.9456622793070052,
+          "empirical_accuracy": 0.3887657058388766,
+          "calibration_gap": 0.5568965734681286
+        }
+      ]
+    },
+    "uncertainty_metrics": {
+      "mean_dataset_entropy": 0.5614715814590454,
+      "median_dataset_entropy": 0.6150841116905212,
+      "quantiles": {
+        "q_10": 0.26686526238918307,
+        "q_25": 0.45893627405166626,
+        "q_50": 0.6150841116905212,
+        "q_75": 0.698250874876976,
+        "q_90": 0.7545541226863862
+      }
+    }
+  },
+  "scaffold": {
+    "temperature": 1.113197684288025,
+    "calibration_metrics": {
+      "uncalibrated_brier": 0.12409276786301014,
+      "calibrated_brier": 0.12349740637118342,
+      "brier_reduction_pct": 0.47977130503202153,
+      "uncalibrated_ece": 0.2128612976102895,
+      "calibrated_ece": 0.2192004243824899,
+      "ece_reduction_pct": -2.978055120102767,
+      "reliability_diagram_bins": [
+        {
+          "bin_idx": 0,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 45766,
+          "weight": 0.4433658839029683,
+          "avg_confidence": 0.022969946777554352,
+          "empirical_accuracy": 0.002294279596206791,
+          "calibration_gap": 0.02067566718134756
+        },
+        {
+          "bin_idx": 1,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 11740,
+          "weight": 0.1137332403317058,
+          "avg_confidence": 0.14681557051748595,
+          "empirical_accuracy": 0.007325383304940375,
+          "calibration_gap": 0.13949018721254558
+        },
+        {
+          "bin_idx": 2,
+          "range": [
+            0.2,
+            0.30000000000000004
+          ],
+          "count": 9203,
+          "weight": 0.08915562272339767,
+          "avg_confidence": 0.2490199717502678,
+          "empirical_accuracy": 0.01412582853417364,
+          "calibration_gap": 0.23489414321609417
+        },
+        {
+          "bin_idx": 3,
+          "range": [
+            0.30000000000000004,
+            0.4
+          ],
+          "count": 8625,
+          "weight": 0.08355614973262032,
+          "avg_confidence": 0.3496321573015572,
+          "empirical_accuracy": 0.02191304347826087,
+          "calibration_gap": 0.3277191138232963
+        },
+        {
+          "bin_idx": 4,
+          "range": [
+            0.4,
+            0.5
+          ],
+          "count": 7821,
+          "weight": 0.07576726342710997,
+          "avg_confidence": 0.448823885061204,
+          "empirical_accuracy": 0.043089119038486126,
+          "calibration_gap": 0.4057347660227179
+        },
+        {
+          "bin_idx": 5,
+          "range": [
+            0.5,
+            0.6000000000000001
+          ],
+          "count": 6568,
+          "weight": 0.06362861350073626,
+          "avg_confidence": 0.5486634296255047,
+          "empirical_accuracy": 0.06196711327649208,
+          "calibration_gap": 0.48669631634901267
+        },
+        {
+          "bin_idx": 6,
+          "range": [
+            0.6000000000000001,
+            0.7000000000000001
+          ],
+          "count": 5136,
+          "weight": 0.04975587072773774,
+          "avg_confidence": 0.6470326030644301,
+          "empirical_accuracy": 0.07145638629283489,
+          "calibration_gap": 0.5755762167715952
+        },
+        {
+          "bin_idx": 7,
+          "range": [
+            0.7000000000000001,
+            0.8
+          ],
+          "count": 3795,
+          "weight": 0.03676470588235294,
+          "avg_confidence": 0.7474225377690965,
+          "empirical_accuracy": 0.09802371541501977,
+          "calibration_gap": 0.6493988223540768
+        },
+        {
+          "bin_idx": 8,
+          "range": [
+            0.8,
+            0.9
+          ],
+          "count": 2699,
+          "weight": 0.026147020072851274,
+          "avg_confidence": 0.8466673346085211,
+          "empirical_accuracy": 0.13115968877361986,
+          "calibration_gap": 0.7155076458349012
+        },
+        {
+          "bin_idx": 9,
+          "range": [
+            0.9,
+            1.0
+          ],
+          "count": 1871,
+          "weight": 0.018125629698519725,
+          "avg_confidence": 0.9491838270938696,
+          "empirical_accuracy": 0.23677177979690006,
+          "calibration_gap": 0.7124120472969695
+        }
+      ]
+    },
+    "uncertainty_metrics": {
+      "mean_dataset_entropy": 0.5117653608322144,
+      "median_dataset_entropy": 0.5361061096191406,
+      "quantiles": {
+        "q_10": 0.24202972948551177,
+        "q_25": 0.41010782122612,
+        "q_50": 0.5361061096191406,
+        "q_75": 0.6503000855445862,
+        "q_90": 0.7446169793605805
+      }
+    }
+  }
+}

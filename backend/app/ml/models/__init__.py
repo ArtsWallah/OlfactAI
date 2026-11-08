@@ -2,6 +2,11 @@
 
 from backend.app.ml.models.base import BaseSmellModel
 from backend.app.ml.models.dummy import DummyFrequencySmellModel
+from backend.app.ml.models.gnn import (
+    MessagePassingLayer,
+    MolecularGNNNetwork,
+    MolecularGNNSmellModel,
+)
 from backend.app.ml.models.pytorch_mlp import OdorMLPNetwork, PyTorchMLPSmellModel
 from backend.app.ml.models.random_forest import RandomForestSmellModel
 from backend.app.ml.models.registry import ModelRegistry
@@ -14,5 +19,8 @@ __all__ = [
     "XGBoostSmellModel",
     "OdorMLPNetwork",
     "PyTorchMLPSmellModel",
+    "MessagePassingLayer",
+    "MolecularGNNNetwork",
+    "MolecularGNNSmellModel",
     "ModelRegistry",
 ]

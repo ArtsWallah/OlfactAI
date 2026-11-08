@@ -1,0 +1,3083 @@
+{
+  "benchmark_timestamp": "2026-11-08T00:13:42.593341+00:00",
+  "hardware_environment": {
+    "device": "cpu",
+    "cuda_available": false,
+    "architecture": "x86_64"
+  },
+  "model_architecture": "MolecularGNN (Edge-conditioned Message-Passing Neural Network)",
+  "splits": {
+    "random": {
+      "model_name": "molecular_gnn_random",
+      "version": "1.0.0",
+      "architecture": {
+        "type": "MolecularGNN (MPNN)",
+        "atom_dim": 50,
+        "bond_dim": 12,
+        "hidden_dim": 128,
+        "num_layers": 3,
+        "dropout": 0.2
+      },
+      "checkpoint_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\random\\gnn\\model.pt",
+      "calibration_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\random\\gnn\\calibration.json",
+      "thresholds_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\random\\gnn\\thresholds.json",
+      "train_time_sec": 105.38580469996668,
+      "inference_time_sec": 0.19536649994552135,
+      "temperature": 0.91283118724823,
+      "calibration_metrics": {
+        "uncalibrated_brier": 0.12811358572117648,
+        "calibrated_brier": 0.12798393857430684,
+        "brier_reduction_pct": 0.10119703241450066,
+        "uncalibrated_ece": 0.23878663754852023,
+        "calibrated_ece": 0.2328824007737703,
+        "ece_reduction_pct": 2.4725993193610876,
+        "reliability_diagram_bins": [
+          {
+            "bin_idx": 0,
+            "range": [
+              0.0,
+              0.1
+            ],
+            "count": 39782,
+            "weight": 0.38539486941021467,
+            "avg_confidence": 0.024691587935173412,
+            "empirical_accuracy": 0.0018852747473731839,
+            "calibration_gap": 0.02280631318780023
+          },
+          {
+            "bin_idx": 1,
+            "range": [
+              0.1,
+              0.2
+            ],
+            "count": 12763,
+            "weight": 0.12364372626520964,
+            "avg_confidence": 0.1472921552671998,
+            "empirical_accuracy": 0.005641306902765807,
+            "calibration_gap": 0.14165084836443398
+          },
+          {
+            "bin_idx": 2,
+            "range": [
+              0.2,
+              0.30000000000000004
+            ],
+            "count": 10357,
+            "weight": 0.10033519336588391,
+            "avg_confidence": 0.24927672364829853,
+            "empirical_accuracy": 0.01052428309355991,
+            "calibration_gap": 0.23875244055473863
+          },
+          {
+            "bin_idx": 3,
+            "range": [
+              0.30000000000000004,
+              0.4
+            ],
+            "count": 9300,
+            "weight": 0.0900953266682167,
+            "avg_confidence": 0.3488460257104648,
+            "empirical_accuracy": 0.02032258064516129,
+            "calibration_gap": 0.3285234450653035
+          },
+          {
+            "bin_idx": 4,
+            "range": [
+              0.4,
+              0.5
+            ],
+            "count": 8589,
+            "weight": 0.08320739362938852,
+            "avg_confidence": 0.4493944767343386,
+            "empirical_accuracy": 0.03551053673303062,
+            "calibration_gap": 0.41388394000130796
+          },
+          {
+            "bin_idx": 5,
+            "range": [
+              0.5,
+              0.6000000000000001
+            ],
+            "count": 7889,
+            "weight": 0.07642602495543672,
+            "avg_confidence": 0.5490320614270043,
+            "empirical_accuracy": 0.06439345924705286,
+            "calibration_gap": 0.48463860217995147
+          },
+          {
+            "bin_idx": 6,
+            "range": [
+              0.6000000000000001,
+              0.7000000000000001
+            ],
+            "count": 6271,
+            "weight": 0.06075137564907386,
+            "avg_confidence": 0.647225030784762,
+            "empirical_accuracy": 0.09950566097911019,
+            "calibration_gap": 0.5477193698056518
+          },
+          {
+            "bin_idx": 7,
+            "range": [
+              0.7000000000000001,
+              0.8
+            ],
+            "count": 4328,
+            "weight": 0.04192823374409052,
+            "avg_confidence": 0.7464412785722235,
+            "empirical_accuracy": 0.1487985212569316,
+            "calibration_gap": 0.5976427573152919
+          },
+          {
+            "bin_idx": 8,
+            "range": [
+              0.8,
+              0.9
+            ],
+            "count": 2592,
+            "weight": 0.025110439432690073,
+            "avg_confidence": 0.8448553872467192,
+            "empirical_accuracy": 0.21103395061728394,
+            "calibration_gap": 0.6338214366294352
+          },
+          {
+            "bin_idx": 9,
+            "range": [
+              0.9,
+              1.0
+            ],
+            "count": 1353,
+            "weight": 0.013107416879795396,
+            "avg_confidence": 0.9456622793070052,
+            "empirical_accuracy": 0.3887657058388766,
+            "calibration_gap": 0.5568965734681286
+          }
+        ]
+      },
+      "uncertainty_metrics": {
+        "mean_dataset_entropy": 0.5614715814590454,
+        "median_dataset_entropy": 0.6150841116905212,
+        "quantiles": {
+          "q_10": 0.26686526238918307,
+          "q_25": 0.45893627405166626,
+          "q_50": 0.6150841116905212,
+          "q_75": 0.698250874876976,
+          "q_90": 0.7545541226863862
+        }
+      },
+      "threshold_stats": {
+        "mean": 0.7369565367698669,
+        "median": 0.75,
+        "optimized_count": 138,
+        "fallback_count": 0
+      },
+      "test_metrics": {
+        "default_threshold": {
+          "subset_accuracy": 0.013368983957219251,
+          "hamming_loss": 0.19698907230876542,
+          "f1_micro": 0.21888444990780578,
+          "f1_macro": 0.17507318645980255,
+          "f1_weighted": 0.3397484033031272,
+          "precision_micro": 0.12700040119466857,
+          "precision_macro": 0.10880822322024353,
+          "precision_weighted": 0.2421756009965056,
+          "recall_micro": 0.7916087802167269,
+          "recall_macro": 0.7367705180675166,
+          "recall_weighted": 0.7916087802167269,
+          "evaluable_labels_count": 138,
+          "total_labels_count": 138,
+          "roc_auc_micro": 0.8754123238610475,
+          "pr_auc_micro": 0.23998232255029736,
+          "roc_auc_macro": 0.8495655248955418,
+          "pr_auc_macro": 0.218185832862264,
+          "evaluable_roc_auc_count": 138,
+          "evaluable_pr_auc_count": 138
+        },
+        "optimized_threshold": {
+          "subset_accuracy": 0.01871657754010695,
+          "hamming_loss": 0.08241300472758273,
+          "f1_micro": 0.32101524463245273,
+          "f1_macro": 0.238512303310779,
+          "f1_weighted": 0.3887785662599978,
+          "precision_micro": 0.2251959686450168,
+          "precision_macro": 0.19695195034641974,
+          "precision_weighted": 0.33109864892325935,
+          "recall_micro": 0.558766323978883,
+          "recall_macro": 0.43116683419378704,
+          "recall_weighted": 0.558766323978883,
+          "evaluable_labels_count": 138,
+          "total_labels_count": 138,
+          "roc_auc_micro": 0.8754123238610475,
+          "pr_auc_micro": 0.23998232255029736,
+          "roc_auc_macro": 0.8495655248955418,
+          "pr_auc_macro": 0.218185832862264,
+          "evaluable_roc_auc_count": 138,
+          "evaluable_pr_auc_count": 138
+        }
+      },
+      "training_history": {
+        "train_losses": [
+          1.2129361087625676,
+          1.1528978564522483,
+          1.088207849589261,
+          1.0310699332844127,
+          0.9644879026846452,
+          0.9319319389083168,
+          0.9118006056005304,
+          0.8868517583066767,
+          0.8662086649374529,
+          0.8570307103070346,
+          0.8368079543113709,
+          0.8292889280752702,
+          0.8147094488143921,
+          0.8023484284227544,
+          0.7994030345569957,
+          0.7826114058494568,
+          0.7770543932914734,
+          0.7730337446386164,
+          0.7627013672481884,
+          0.7542575608600269,
+          0.7467028758742592,
+          0.7385915756225586,
+          0.7306739373640581,
+          0.7288384155793624,
+          0.720794491334395
+        ],
+        "val_losses": [
+          1.1747456689675648,
+          1.1059032777945201,
+          1.0392302473386128,
+          0.9825809349616369,
+          0.9328601906696955,
+          0.9201814780632654,
+          0.918952152132988,
+          0.8983745326598486,
+          0.8799648607770602,
+          0.8922951767841975,
+          0.8641474594672521,
+          0.8542298351724943,
+          0.8500595937172571,
+          0.8504181876778603,
+          0.8475945591926575,
+          0.8255169739325842,
+          0.8316512604554495,
+          0.8200918734073639,
+          0.8273580794533094,
+          0.8080166255434355,
+          0.8241879468162855,
+          0.8228092938661575,
+          0.8283335044980049,
+          0.8264441639184952,
+          0.81489048153162
+        ],
+        "best_epoch": 20
+      },
+      "test_per_label": {
+        "alcoholic": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.6666666666666666,
+          "precision": 0.6,
+          "recall": 0.75,
+          "roc_auc": 0.9734460382513662,
+          "pr_auc": 0.6563647140050413
+        },
+        "aldehydic": {
+          "support": 17,
+          "evaluable": true,
+          "f1": 0.21428571428571427,
+          "precision": 0.13432835820895522,
+          "recall": 0.5294117647058824,
+          "roc_auc": 0.873018427617285,
+          "pr_auc": 0.20168387047541717
+        },
+        "alliaceous": {
+          "support": 20,
+          "evaluable": true,
+          "f1": 0.4827586206896552,
+          "precision": 0.3684210526315789,
+          "recall": 0.7,
+          "roc_auc": 0.962706043956044,
+          "pr_auc": 0.46670298440242025
+        },
+        "almond": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.08333333333333333,
+          "precision": 0.07692307692307693,
+          "recall": 0.09090909090909091,
+          "roc_auc": 0.9068706056494387,
+          "pr_auc": 0.14356087039965784
+        },
+        "amber": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.23529411764705882,
+          "precision": 0.21052631578947367,
+          "recall": 0.26666666666666666,
+          "roc_auc": 0.8281946339245111,
+          "pr_auc": 0.31409338141351834
+        },
+        "animal": {
+          "support": 20,
+          "evaluable": true,
+          "f1": 0.25,
+          "precision": 0.16666666666666666,
+          "recall": 0.5,
+          "roc_auc": 0.8861263736263737,
+          "pr_auc": 0.16692183328964766
+        },
+        "anisic": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.17391304347826086,
+          "precision": 0.11320754716981132,
+          "recall": 0.375,
+          "roc_auc": 0.7815915300546449,
+          "pr_auc": 0.1232555373162835
+        },
+        "apple": {
+          "support": 47,
+          "evaluable": true,
+          "f1": 0.509090909090909,
+          "precision": 0.4444444444444444,
+          "recall": 0.5957446808510638,
+          "roc_auc": 0.9223298024099311,
+          "pr_auc": 0.4542974695917636
+        },
+        "apricot": {
+          "support": 17,
+          "evaluable": true,
+          "f1": 0.13253012048192772,
+          "precision": 0.0738255033557047,
+          "recall": 0.6470588235294118,
+          "roc_auc": 0.8484750945521847,
+          "pr_auc": 0.17306971932635737
+        },
+        "aromatic": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.12121212121212122,
+          "precision": 0.1111111111111111,
+          "recall": 0.13333333333333333,
+          "roc_auc": 0.7995452478399272,
+          "pr_auc": 0.09653252210820179
+        },
+        "balsamic": {
+          "support": 43,
+          "evaluable": true,
+          "f1": 0.3464566929133858,
+          "precision": 0.2619047619047619,
+          "recall": 0.5116279069767442,
+          "roc_auc": 0.8416955302655451,
+          "pr_auc": 0.3231457386101797
+        },
+        "banana": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.4406779661016949,
+          "precision": 0.3023255813953488,
+          "recall": 0.8125,
+          "roc_auc": 0.9566256830601092,
+          "pr_auc": 0.30050310775067307
+        },
+        "beefy": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.25,
+          "precision": 0.25,
+          "recall": 0.25,
+          "roc_auc": 0.8967905405405405,
+          "pr_auc": 0.09767913951192793
+        },
+        "bergamot": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.10526315789473684,
+          "precision": 0.058823529411764705,
+          "recall": 0.5,
+          "roc_auc": 0.8016085790884718,
+          "pr_auc": 0.12838983050847458
+        },
+        "berry": {
+          "support": 25,
+          "evaluable": true,
+          "f1": 0.174496644295302,
+          "precision": 0.10483870967741936,
+          "recall": 0.52,
+          "roc_auc": 0.7425172890733057,
+          "pr_auc": 0.07618024729694714
+        },
+        "bitter": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.08695652173913043,
+          "precision": 0.06666666666666667,
+          "recall": 0.125,
+          "roc_auc": 0.6888513513513513,
+          "pr_auc": 0.07105325234533925
+        },
+        "black currant": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.17391304347826086,
+          "precision": 0.125,
+          "recall": 0.2857142857142857,
+          "roc_auc": 0.9728166570271835,
+          "pr_auc": 0.16303220588934875
+        },
+        "brandy": {
+          "support": 14,
+          "evaluable": true,
+          "f1": 0.14942528735632185,
+          "precision": 0.08125,
+          "recall": 0.9285714285714286,
+          "roc_auc": 0.8979174776177501,
+          "pr_auc": 0.1653425125093911
+        },
+        "burnt": {
+          "support": 22,
+          "evaluable": true,
+          "f1": 0.25742574257425743,
+          "precision": 0.16455696202531644,
+          "recall": 0.5909090909090909,
+          "roc_auc": 0.8491109441522665,
+          "pr_auc": 0.18161922761405802
+        },
+        "buttery": {
+          "support": 21,
+          "evaluable": true,
+          "f1": 0.2857142857142857,
+          "precision": 0.17346938775510204,
+          "recall": 0.8095238095238095,
+          "roc_auc": 0.9343682452348202,
+          "pr_auc": 0.20095287383546975
+        },
+        "cabbage": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9235531628532975,
+          "pr_auc": 0.049018123975706165
+        },
+        "camphoreous": {
+          "support": 21,
+          "evaluable": true,
+          "f1": 0.12903225806451613,
+          "precision": 0.2,
+          "recall": 0.09523809523809523,
+          "roc_auc": 0.9105914718019258,
+          "pr_auc": 0.1978810727068708
+        },
+        "caramellic": {
+          "support": 43,
+          "evaluable": true,
+          "f1": 0.5,
+          "precision": 0.4888888888888889,
+          "recall": 0.5116279069767442,
+          "roc_auc": 0.8843476826653471,
+          "pr_auc": 0.5317221104105408
+        },
+        "cedar": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.2727272727272727,
+          "precision": 0.1875,
+          "recall": 0.5,
+          "roc_auc": 0.9615902964959568,
+          "pr_auc": 0.1616789188793797
+        },
+        "celery": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.5050403225806451,
+          "pr_auc": 0.007613878478177584
+        },
+        "chamomile": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.13333333333333333,
+          "precision": 0.07142857142857142,
+          "recall": 1.0,
+          "roc_auc": 0.9741588156123823,
+          "pr_auc": 0.27077079107505075
+        },
+        "cheesy": {
+          "support": 27,
+          "evaluable": true,
+          "f1": 0.3380281690140845,
+          "precision": 0.2727272727272727,
+          "recall": 0.4444444444444444,
+          "roc_auc": 0.8892998407561514,
+          "pr_auc": 0.29827180239026
+        },
+        "cherry": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8311653116531166,
+          "pr_auc": 0.04194394265398976
+        },
+        "chocolate": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.1111111111111111,
+          "precision": 0.06153846153846154,
+          "recall": 0.5714285714285714,
+          "roc_auc": 0.8629265471370734,
+          "pr_auc": 0.1331852814410467
+        },
+        "cinnamon": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.22580645161290322,
+          "precision": 0.1346153846153846,
+          "recall": 0.7,
+          "roc_auc": 0.9269647696476965,
+          "pr_auc": 0.23166488671327606
+        },
+        "citrus": {
+          "support": 62,
+          "evaluable": true,
+          "f1": 0.36046511627906974,
+          "precision": 0.2818181818181818,
+          "recall": 0.5,
+          "roc_auc": 0.8331726699896549,
+          "pr_auc": 0.32132202895652817
+        },
+        "clean": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.0970873786407767,
+          "precision": 0.056818181818181816,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.8027285129604366,
+          "pr_auc": 0.05660319210509012
+        },
+        "clove": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.06896551724137931,
+          "precision": 0.038461538461538464,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.7691275167785235,
+          "pr_auc": 0.021342148409035703
+        },
+        "cocoa": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.16666666666666666,
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "roc_auc": 0.8398782343987824,
+          "pr_auc": 0.1882131912512296
+        },
+        "coconut": {
+          "support": 13,
+          "evaluable": true,
+          "f1": 0.36363636363636365,
+          "precision": 0.3,
+          "recall": 0.46153846153846156,
+          "roc_auc": 0.9024594453165882,
+          "pr_auc": 0.36572673025105873
+        },
+        "coffee": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.24242424242424243,
+          "precision": 0.18181818181818182,
+          "recall": 0.36363636363636365,
+          "roc_auc": 0.9198223757246823,
+          "pr_auc": 0.20331518435135448
+        },
+        "cognac": {
+          "support": 17,
+          "evaluable": true,
+          "f1": 0.4,
+          "precision": 0.27906976744186046,
+          "recall": 0.7058823529411765,
+          "roc_auc": 0.9227890882755291,
+          "pr_auc": 0.4137351969867593
+        },
+        "cooked": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.20833333333333334,
+          "precision": 0.1282051282051282,
+          "recall": 0.5555555555555556,
+          "roc_auc": 0.8932491354683506,
+          "pr_auc": 0.34414266768246893
+        },
+        "cooling": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.13333333333333333,
+          "precision": 0.08333333333333333,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.822463768115942,
+          "pr_auc": 0.06383406730183114
+        },
+        "cortex": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.024096385542168676,
+          "precision": 0.01282051282051282,
+          "recall": 0.2,
+          "roc_auc": 0.6888290713324361,
+          "pr_auc": 0.021904974127043907
+        },
+        "coumarinic": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.46153846153846156,
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "roc_auc": 0.9892183288409704,
+          "pr_auc": 0.382034632034632
+        },
+        "creamy": {
+          "support": 35,
+          "evaluable": true,
+          "f1": 0.21978021978021978,
+          "precision": 0.17857142857142858,
+          "recall": 0.2857142857142857,
+          "roc_auc": 0.6551392506511722,
+          "pr_auc": 0.10426198029638341
+        },
+        "cucumber": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.38461538461538464,
+          "precision": 0.3125,
+          "recall": 0.5,
+          "roc_auc": 0.9337398373983741,
+          "pr_auc": 0.2116259671515791
+        },
+        "dairy": {
+          "support": 23,
+          "evaluable": true,
+          "f1": 0.43478260869565216,
+          "precision": 0.43478260869565216,
+          "recall": 0.43478260869565216,
+          "roc_auc": 0.8121739130434783,
+          "pr_auc": 0.1795862861263469
+        },
+        "dry": {
+          "support": 24,
+          "evaluable": true,
+          "f1": 0.05405405405405406,
+          "precision": 0.07692307692307693,
+          "recall": 0.041666666666666664,
+          "roc_auc": 0.768128453038674,
+          "pr_auc": 0.10642387686364801
+        },
+        "earthy": {
+          "support": 47,
+          "evaluable": true,
+          "f1": 0.20588235294117646,
+          "precision": 0.15730337078651685,
+          "recall": 0.2978723404255319,
+          "roc_auc": 0.696542932588703,
+          "pr_auc": 0.18791573022052527
+        },
+        "ethereal": {
+          "support": 44,
+          "evaluable": true,
+          "f1": 0.5103448275862069,
+          "precision": 0.36633663366336633,
+          "recall": 0.8409090909090909,
+          "roc_auc": 0.9181947314049587,
+          "pr_auc": 0.6481751670207208
+        },
+        "fatty": {
+          "support": 88,
+          "evaluable": true,
+          "f1": 0.582010582010582,
+          "precision": 0.5445544554455446,
+          "recall": 0.625,
+          "roc_auc": 0.8738033746556474,
+          "pr_auc": 0.4865540520536132
+        },
+        "fermented": {
+          "support": 23,
+          "evaluable": true,
+          "f1": 0.3333333333333333,
+          "precision": 0.3684210526315789,
+          "recall": 0.30434782608695654,
+          "roc_auc": 0.8581709145427286,
+          "pr_auc": 0.22381664820045322
+        },
+        "fishy": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.42857142857142855,
+          "precision": 0.75,
+          "recall": 0.3,
+          "roc_auc": 0.8750677506775069,
+          "pr_auc": 0.44025909450501105
+        },
+        "floral": {
+          "support": 163,
+          "evaluable": true,
+          "f1": 0.5136842105263157,
+          "precision": 0.391025641025641,
+          "recall": 0.7484662576687117,
+          "roc_auc": 0.7832835194798384,
+          "pr_auc": 0.4581772396701847
+        },
+        "fresh": {
+          "support": 73,
+          "evaluable": true,
+          "f1": 0.31141868512110726,
+          "precision": 0.20833333333333334,
+          "recall": 0.6164383561643836,
+          "roc_auc": 0.7634195839675291,
+          "pr_auc": 0.21048096528969062
+        },
+        "fruit skin": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.12307692307692308,
+          "precision": 0.07017543859649122,
+          "recall": 0.5,
+          "roc_auc": 0.8442567567567567,
+          "pr_auc": 0.06570636947328648
+        },
+        "fruity": {
+          "support": 273,
+          "evaluable": true,
+          "f1": 0.6802443991853361,
+          "precision": 0.7660550458715596,
+          "recall": 0.6117216117216118,
+          "roc_auc": 0.8588818199344515,
+          "pr_auc": 0.7752430186861132
+        },
+        "garlic": {
+          "support": 22,
+          "evaluable": true,
+          "f1": 0.6666666666666666,
+          "precision": 0.5625,
+          "recall": 0.8181818181818182,
+          "roc_auc": 0.9780240420736289,
+          "pr_auc": 0.7172969962486931
+        },
+        "gassy": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9396782841823056,
+          "pr_auc": 0.03142589118198874
+        },
+        "geranium": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.04081632653061224,
+          "precision": 0.022727272727272728,
+          "recall": 0.2,
+          "roc_auc": 0.7422764227642278,
+          "pr_auc": 0.03693174559983783
+        },
+        "grape": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.1518987341772152,
+          "precision": 0.08571428571428572,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.8273211567732115,
+          "pr_auc": 0.08097979759387601
+        },
+        "grapefruit": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.32142857142857145,
+          "precision": 0.21951219512195122,
+          "recall": 0.6,
+          "roc_auc": 0.880218281036835,
+          "pr_auc": 0.2521286625797851
+        },
+        "grassy": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7434316023189835,
+          "pr_auc": 0.03806963288043192
+        },
+        "green": {
+          "support": 194,
+          "evaluable": true,
+          "f1": 0.5335628227194492,
+          "precision": 0.4005167958656331,
+          "recall": 0.7989690721649485,
+          "roc_auc": 0.7580529606609849,
+          "pr_auc": 0.5021258094633374
+        },
+        "hawthorn": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8755020080321285,
+          "pr_auc": 0.010638297872340425
+        },
+        "hay": {
+          "support": 13,
+          "evaluable": true,
+          "f1": 0.23076923076923078,
+          "precision": 0.23076923076923078,
+          "recall": 0.23076923076923078,
+          "roc_auc": 0.7925693354264783,
+          "pr_auc": 0.12008981558670657
+        },
+        "hazelnut": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.38461538461538464,
+          "precision": 0.29411764705882354,
+          "recall": 0.5555555555555556,
+          "roc_auc": 0.9379040745752519,
+          "pr_auc": 0.20422167214478384
+        },
+        "herbal": {
+          "support": 126,
+          "evaluable": true,
+          "f1": 0.39823008849557523,
+          "precision": 0.27607361963190186,
+          "recall": 0.7142857142857143,
+          "roc_auc": 0.7081610779359975,
+          "pr_auc": 0.26990395090811115
+        },
+        "honey": {
+          "support": 29,
+          "evaluable": true,
+          "f1": 0.2608695652173913,
+          "precision": 0.1744186046511628,
+          "recall": 0.5172413793103449,
+          "roc_auc": 0.8071075727782839,
+          "pr_auc": 0.16894151796326595
+        },
+        "hyacinth": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.18181818181818182,
+          "precision": 0.10526315789473684,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.9503355704697986,
+          "pr_auc": 0.07867132867132867
+        },
+        "jasmin": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.18181818181818182,
+          "precision": 0.10526315789473684,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.7999090495679855,
+          "pr_auc": 0.10738320929931688
+        },
+        "juicy": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.13333333333333333,
+          "precision": 0.0759493670886076,
+          "recall": 0.5454545454545454,
+          "roc_auc": 0.8548168249660787,
+          "pr_auc": 0.09855362653354639
+        },
+        "ketonic": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.36363636363636365,
+          "precision": 0.2857142857142857,
+          "recall": 0.5,
+          "roc_auc": 0.9842069892473119,
+          "pr_auc": 0.4738095238095238
+        },
+        "lactonic": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.24390243902439024,
+          "precision": 0.16666666666666666,
+          "recall": 0.45454545454545453,
+          "roc_auc": 0.93339089675589,
+          "pr_auc": 0.1812353102373809
+        },
+        "lavender": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7153897849462366,
+          "pr_auc": 0.014157548285484258
+        },
+        "leafy": {
+          "support": 19,
+          "evaluable": true,
+          "f1": 0.06896551724137931,
+          "precision": 0.04411764705882353,
+          "recall": 0.15789473684210525,
+          "roc_auc": 0.7533752075662407,
+          "pr_auc": 0.06145319699829118
+        },
+        "leathery": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.4,
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.9690026954177897,
+          "pr_auc": 0.35717897595931575
+        },
+        "lemon": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.12631578947368421,
+          "precision": 0.06896551724137931,
+          "recall": 0.75,
+          "roc_auc": 0.8868243243243243,
+          "pr_auc": 0.053838491936521446
+        },
+        "lily": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7999999999999999,
+          "pr_auc": 0.03587724139784755
+        },
+        "malty": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.1111111111111111,
+          "precision": 0.07142857142857142,
+          "recall": 0.25,
+          "roc_auc": 0.6085349462365592,
+          "pr_auc": 0.09885772357723577
+        },
+        "meaty": {
+          "support": 41,
+          "evaluable": true,
+          "f1": 0.5190839694656488,
+          "precision": 0.37777777777777777,
+          "recall": 0.8292682926829268,
+          "roc_auc": 0.9488391347845586,
+          "pr_auc": 0.4523772569633035
+        },
+        "medicinal": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8482745324850588,
+          "pr_auc": 0.04703340375585637
+        },
+        "melon": {
+          "support": 21,
+          "evaluable": true,
+          "f1": 0.2564102564102564,
+          "precision": 0.2777777777777778,
+          "recall": 0.23809523809523808,
+          "roc_auc": 0.848234754699679,
+          "pr_auc": 0.24402152660225418
+        },
+        "metallic": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.0861244019138756,
+          "precision": 0.046632124352331605,
+          "recall": 0.5625,
+          "roc_auc": 0.668886612021858,
+          "pr_auc": 0.09220273273336305
+        },
+        "milky": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.04878048780487805,
+          "precision": 0.03225806451612903,
+          "recall": 0.1,
+          "roc_auc": 0.9197831978319784,
+          "pr_auc": 0.08347913224982738
+        },
+        "mint": {
+          "support": 38,
+          "evaluable": true,
+          "f1": 0.2896551724137931,
+          "precision": 0.19626168224299065,
+          "recall": 0.5526315789473685,
+          "roc_auc": 0.8494810971089697,
+          "pr_auc": 0.19310540373879945
+        },
+        "muguet": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.858517516162983,
+          "pr_auc": 0.09414428273594283
+        },
+        "mushroom": {
+          "support": 19,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8551729117031261,
+          "pr_auc": 0.13293883824406502
+        },
+        "musk": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.5,
+          "precision": 0.47058823529411764,
+          "recall": 0.5333333333333333,
+          "roc_auc": 0.8649386084583901,
+          "pr_auc": 0.35802385577094914
+        },
+        "musty": {
+          "support": 35,
+          "evaluable": true,
+          "f1": 0.1276595744680851,
+          "precision": 0.25,
+          "recall": 0.08571428571428572,
+          "roc_auc": 0.7681426567822079,
+          "pr_auc": 0.16692732905639393
+        },
+        "natural": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7531762674232145,
+          "pr_auc": 0.046406911053967874
+        },
+        "nutty": {
+          "support": 53,
+          "evaluable": true,
+          "f1": 0.4166666666666667,
+          "precision": 0.46511627906976744,
+          "recall": 0.37735849056603776,
+          "roc_auc": 0.8332021175512421,
+          "pr_auc": 0.40146097406774467
+        },
+        "odorless": {
+          "support": 30,
+          "evaluable": true,
+          "f1": 0.8,
+          "precision": 0.8,
+          "recall": 0.8,
+          "roc_auc": 0.920636025998143,
+          "pr_auc": 0.7796623672010673
+        },
+        "oily": {
+          "support": 72,
+          "evaluable": true,
+          "f1": 0.41509433962264153,
+          "precision": 0.3793103448275862,
+          "recall": 0.4583333333333333,
+          "roc_auc": 0.8289365548980935,
+          "pr_auc": 0.3370510669120621
+        },
+        "onion": {
+          "support": 24,
+          "evaluable": true,
+          "f1": 0.5428571428571428,
+          "precision": 0.41304347826086957,
+          "recall": 0.7916666666666666,
+          "roc_auc": 0.9802601289134438,
+          "pr_auc": 0.5725661943937914
+        },
+        "orange": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.0425531914893617,
+          "precision": 0.027777777777777776,
+          "recall": 0.09090909090909091,
+          "roc_auc": 0.7183915135068459,
+          "pr_auc": 0.03289053266579406
+        },
+        "orangeflower": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8709677419354839,
+          "pr_auc": 0.025071460039241635
+        },
+        "orris": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.1935483870967742,
+          "precision": 0.13636363636363635,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.8740039091865884,
+          "pr_auc": 0.0948490557362899
+        },
+        "ozone": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.27586206896551724,
+          "precision": 0.18181818181818182,
+          "recall": 0.5714285714285714,
+          "roc_auc": 0.9573934837092731,
+          "pr_auc": 0.29792984679068424
+        },
+        "peach": {
+          "support": 19,
+          "evaluable": true,
+          "f1": 0.12698412698412698,
+          "precision": 0.09090909090909091,
+          "recall": 0.21052631578947367,
+          "roc_auc": 0.8095444372247491,
+          "pr_auc": 0.11672535824404194
+        },
+        "pear": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.2692307692307692,
+          "precision": 0.1891891891891892,
+          "recall": 0.4666666666666667,
+          "roc_auc": 0.8814915870850386,
+          "pr_auc": 0.24207203429127053
+        },
+        "phenolic": {
+          "support": 30,
+          "evaluable": true,
+          "f1": 0.4444444444444444,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.9336583101207057,
+          "pr_auc": 0.3060712594454231
+        },
+        "pine": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.16666666666666666,
+          "precision": 0.1111111111111111,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.9421139678243874,
+          "pr_auc": 0.1155864935172626
+        },
+        "pineapple": {
+          "support": 29,
+          "evaluable": true,
+          "f1": 0.375,
+          "precision": 0.34285714285714286,
+          "recall": 0.41379310344827586,
+          "roc_auc": 0.8755934967147859,
+          "pr_auc": 0.27153171951793725
+        },
+        "plum": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.05714285714285714,
+          "precision": 0.03333333333333333,
+          "recall": 0.2,
+          "roc_auc": 0.715507048658481,
+          "pr_auc": 0.04391812261125339
+        },
+        "popcorn": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.06666666666666667,
+          "precision": 0.034482758620689655,
+          "recall": 1.0,
+          "roc_auc": 0.9759036144578314,
+          "pr_auc": 0.05263157894736842
+        },
+        "potato": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.16666666666666666,
+          "precision": 0.09615384615384616,
+          "recall": 0.625,
+          "roc_auc": 0.9123310810810811,
+          "pr_auc": 0.247913303289512
+        },
+        "powdery": {
+          "support": 29,
+          "evaluable": true,
+          "f1": 0.2376237623762376,
+          "precision": 0.16666666666666666,
+          "recall": 0.41379310344827586,
+          "roc_auc": 0.8147810656563234,
+          "pr_auc": 0.14459451389912273
+        },
+        "pungent": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.22857142857142856,
+          "precision": 0.13793103448275862,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.8726027397260274,
+          "pr_auc": 0.18149697765262945
+        },
+        "radish": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.10526315789473684,
+          "precision": 0.06666666666666667,
+          "recall": 0.25,
+          "roc_auc": 0.895497311827957,
+          "pr_auc": 0.06777155295461035
+        },
+        "raspberry": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.03773584905660377,
+          "precision": 0.019417475728155338,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.8647798742138365,
+          "pr_auc": 0.050530352526773285
+        },
+        "ripe": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.2857142857142857,
+          "precision": 0.6666666666666666,
+          "recall": 0.18181818181818182,
+          "roc_auc": 0.9015665474281485,
+          "pr_auc": 0.37092059241640496
+        },
+        "roasted": {
+          "support": 30,
+          "evaluable": true,
+          "f1": 0.39416058394160586,
+          "precision": 0.2523364485981308,
+          "recall": 0.9,
+          "roc_auc": 0.9270194986072423,
+          "pr_auc": 0.3977196501613357
+        },
+        "rose": {
+          "support": 42,
+          "evaluable": true,
+          "f1": 0.25196850393700787,
+          "precision": 0.18823529411764706,
+          "recall": 0.38095238095238093,
+          "roc_auc": 0.7927121273438554,
+          "pr_auc": 0.2034499654349526
+        },
+        "rummy": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.2894736842105263,
+          "precision": 0.18333333333333332,
+          "recall": 0.6875,
+          "roc_auc": 0.9012978142076503,
+          "pr_auc": 0.4405257056183717
+        },
+        "sandalwood": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.15384615384615385,
+          "precision": 0.16666666666666666,
+          "recall": 0.14285714285714285,
+          "roc_auc": 0.9427414690572585,
+          "pr_auc": 0.17192912626043325
+        },
+        "savory": {
+          "support": 20,
+          "evaluable": true,
+          "f1": 0.4262295081967213,
+          "precision": 0.3170731707317073,
+          "recall": 0.65,
+          "roc_auc": 0.9322115384615385,
+          "pr_auc": 0.3003922070540297
+        },
+        "sharp": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.0975609756097561,
+          "precision": 0.06896551724137931,
+          "recall": 0.16666666666666666,
+          "roc_auc": 0.7586050724637681,
+          "pr_auc": 0.072890666864366
+        },
+        "smoky": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.09090909090909091,
+          "precision": 0.05263157894736842,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.846136567834681,
+          "pr_auc": 0.0427054961374128
+        },
+        "soapy": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8532974427994616,
+          "pr_auc": 0.03812689510493655
+        },
+        "solvent": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.13333333333333333,
+          "precision": 0.2,
+          "recall": 0.1,
+          "roc_auc": 0.9695121951219513,
+          "pr_auc": 0.23173530434294237
+        },
+        "sour": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.18181818181818182,
+          "precision": 0.16666666666666666,
+          "recall": 0.2,
+          "roc_auc": 0.7876693766937669,
+          "pr_auc": 0.07640112448713811
+        },
+        "spicy": {
+          "support": 69,
+          "evaluable": true,
+          "f1": 0.3524904214559387,
+          "precision": 0.23958333333333334,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.808456596444046,
+          "pr_auc": 0.28404140135136713
+        },
+        "strawberry": {
+          "support": 13,
+          "evaluable": true,
+          "f1": 0.2028985507246377,
+          "precision": 0.125,
+          "recall": 0.5384615384615384,
+          "roc_auc": 0.8547357404500262,
+          "pr_auc": 0.1801965711981558
+        },
+        "sulfurous": {
+          "support": 70,
+          "evaluable": true,
+          "f1": 0.7692307692307693,
+          "precision": 0.6976744186046512,
+          "recall": 0.8571428571428571,
+          "roc_auc": 0.9715128529287822,
+          "pr_auc": 0.7687030112763751
+        },
+        "sweaty": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.07407407407407407,
+          "precision": 0.041666666666666664,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.7024608501118568,
+          "pr_auc": 0.061770343993625
+        },
+        "sweet": {
+          "support": 223,
+          "evaluable": true,
+          "f1": 0.5401709401709401,
+          "precision": 0.43646408839779005,
+          "recall": 0.7085201793721974,
+          "roc_auc": 0.7236942131112534,
+          "pr_auc": 0.5162087474701595
+        },
+        "tea": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.5776286353467561,
+          "pr_auc": 0.006701102440587206
+        },
+        "terpenic": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.1643835616438356,
+          "precision": 0.09375,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.9162531950082694,
+          "pr_auc": 0.08262348807115898
+        },
+        "tobacco": {
+          "support": 13,
+          "evaluable": true,
+          "f1": 0.1456953642384106,
+          "precision": 0.07971014492753623,
+          "recall": 0.8461538461538461,
+          "roc_auc": 0.8576661433804291,
+          "pr_auc": 0.09408888989841895
+        },
+        "tomato": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.05263157894736842,
+          "precision": 0.02857142857142857,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.7664429530201342,
+          "pr_auc": 0.08461868461868462
+        },
+        "tropical": {
+          "support": 65,
+          "evaluable": true,
+          "f1": 0.36018957345971564,
+          "precision": 0.2602739726027397,
+          "recall": 0.5846153846153846,
+          "roc_auc": 0.8004955513008222,
+          "pr_auc": 0.3222475365240303
+        },
+        "vanilla": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.4444444444444444,
+          "precision": 0.3076923076923077,
+          "recall": 0.8,
+          "roc_auc": 0.9721691678035471,
+          "pr_auc": 0.40487313905298516
+        },
+        "vegetable": {
+          "support": 42,
+          "evaluable": true,
+          "f1": 0.1978021978021978,
+          "precision": 0.1836734693877551,
+          "recall": 0.21428571428571427,
+          "roc_auc": 0.8273303655739915,
+          "pr_auc": 0.2107048391573033
+        },
+        "vetiver": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8012129380053907,
+          "pr_auc": 0.027777684275907516
+        },
+        "violet": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.1111111111111111,
+          "precision": 0.1,
+          "recall": 0.125,
+          "roc_auc": 0.8536543715846995,
+          "pr_auc": 0.111710025499141
+        },
+        "warm": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.059880239520958084,
+          "precision": 0.03225806451612903,
+          "recall": 0.4166666666666667,
+          "roc_auc": 0.7665307971014493,
+          "pr_auc": 0.04270004953543123
+        },
+        "waxy": {
+          "support": 77,
+          "evaluable": true,
+          "f1": 0.5172413793103449,
+          "precision": 0.3870967741935484,
+          "recall": 0.7792207792207793,
+          "roc_auc": 0.8963555073838234,
+          "pr_auc": 0.4785144965336827
+        },
+        "weedy": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.023076923076923078,
+          "precision": 0.011764705882352941,
+          "recall": 0.6,
+          "roc_auc": 0.8067294751009421,
+          "pr_auc": 0.09701582332882333
+        },
+        "winey": {
+          "support": 34,
+          "evaluable": true,
+          "f1": 0.28169014084507044,
+          "precision": 0.18518518518518517,
+          "recall": 0.5882352941176471,
+          "roc_auc": 0.8757208765859285,
+          "pr_auc": 0.17776477426648324
+        },
+        "woody": {
+          "support": 104,
+          "evaluable": true,
+          "f1": 0.5588235294117647,
+          "precision": 0.4523809523809524,
+          "recall": 0.7307692307692307,
+          "roc_auc": 0.8823608456760631,
+          "pr_auc": 0.6152999323412272
+        }
+      }
+    },
+    "scaffold": {
+      "model_name": "molecular_gnn_scaffold",
+      "version": "1.0.0",
+      "architecture": {
+        "type": "MolecularGNN (MPNN)",
+        "atom_dim": 50,
+        "bond_dim": 12,
+        "hidden_dim": 128,
+        "num_layers": 3,
+        "dropout": 0.2
+      },
+      "checkpoint_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\scaffold\\gnn\\model.pt",
+      "calibration_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\scaffold\\gnn\\calibration.json",
+      "thresholds_path": "C:\\Users\\DELL\\Desktop\\OlfactAI\\backend\\models\\phase4\\scaffold\\gnn\\thresholds.json",
+      "train_time_sec": 85.4122139000101,
+      "inference_time_sec": 0.2350230000447482,
+      "temperature": 1.113197684288025,
+      "calibration_metrics": {
+        "uncalibrated_brier": 0.12409276786301014,
+        "calibrated_brier": 0.12349740637118342,
+        "brier_reduction_pct": 0.47977130503202153,
+        "uncalibrated_ece": 0.2128612976102895,
+        "calibrated_ece": 0.2192004243824899,
+        "ece_reduction_pct": -2.978055120102767,
+        "reliability_diagram_bins": [
+          {
+            "bin_idx": 0,
+            "range": [
+              0.0,
+              0.1
+            ],
+            "count": 45766,
+            "weight": 0.4433658839029683,
+            "avg_confidence": 0.022969946777554352,
+            "empirical_accuracy": 0.002294279596206791,
+            "calibration_gap": 0.02067566718134756
+          },
+          {
+            "bin_idx": 1,
+            "range": [
+              0.1,
+              0.2
+            ],
+            "count": 11740,
+            "weight": 0.1137332403317058,
+            "avg_confidence": 0.14681557051748595,
+            "empirical_accuracy": 0.007325383304940375,
+            "calibration_gap": 0.13949018721254558
+          },
+          {
+            "bin_idx": 2,
+            "range": [
+              0.2,
+              0.30000000000000004
+            ],
+            "count": 9203,
+            "weight": 0.08915562272339767,
+            "avg_confidence": 0.2490199717502678,
+            "empirical_accuracy": 0.01412582853417364,
+            "calibration_gap": 0.23489414321609417
+          },
+          {
+            "bin_idx": 3,
+            "range": [
+              0.30000000000000004,
+              0.4
+            ],
+            "count": 8625,
+            "weight": 0.08355614973262032,
+            "avg_confidence": 0.3496321573015572,
+            "empirical_accuracy": 0.02191304347826087,
+            "calibration_gap": 0.3277191138232963
+          },
+          {
+            "bin_idx": 4,
+            "range": [
+              0.4,
+              0.5
+            ],
+            "count": 7821,
+            "weight": 0.07576726342710997,
+            "avg_confidence": 0.448823885061204,
+            "empirical_accuracy": 0.043089119038486126,
+            "calibration_gap": 0.4057347660227179
+          },
+          {
+            "bin_idx": 5,
+            "range": [
+              0.5,
+              0.6000000000000001
+            ],
+            "count": 6568,
+            "weight": 0.06362861350073626,
+            "avg_confidence": 0.5486634296255047,
+            "empirical_accuracy": 0.06196711327649208,
+            "calibration_gap": 0.48669631634901267
+          },
+          {
+            "bin_idx": 6,
+            "range": [
+              0.6000000000000001,
+              0.7000000000000001
+            ],
+            "count": 5136,
+            "weight": 0.04975587072773774,
+            "avg_confidence": 0.6470326030644301,
+            "empirical_accuracy": 0.07145638629283489,
+            "calibration_gap": 0.5755762167715952
+          },
+          {
+            "bin_idx": 7,
+            "range": [
+              0.7000000000000001,
+              0.8
+            ],
+            "count": 3795,
+            "weight": 0.03676470588235294,
+            "avg_confidence": 0.7474225377690965,
+            "empirical_accuracy": 0.09802371541501977,
+            "calibration_gap": 0.6493988223540768
+          },
+          {
+            "bin_idx": 8,
+            "range": [
+              0.8,
+              0.9
+            ],
+            "count": 2699,
+            "weight": 0.026147020072851274,
+            "avg_confidence": 0.8466673346085211,
+            "empirical_accuracy": 0.13115968877361986,
+            "calibration_gap": 0.7155076458349012
+          },
+          {
+            "bin_idx": 9,
+            "range": [
+              0.9,
+              1.0
+            ],
+            "count": 1871,
+            "weight": 0.018125629698519725,
+            "avg_confidence": 0.9491838270938696,
+            "empirical_accuracy": 0.23677177979690006,
+            "calibration_gap": 0.7124120472969695
+          }
+        ]
+      },
+      "uncertainty_metrics": {
+        "mean_dataset_entropy": 0.5117653608322144,
+        "median_dataset_entropy": 0.5361061096191406,
+        "quantiles": {
+          "q_10": 0.24202972948551177,
+          "q_25": 0.41010782122612,
+          "q_50": 0.5361061096191406,
+          "q_75": 0.6503000855445862,
+          "q_90": 0.7446169793605805
+        }
+      },
+      "threshold_stats": {
+        "mean": 0.679347813129425,
+        "median": 0.699999988079071,
+        "optimized_count": 134,
+        "fallback_count": 4
+      },
+      "test_metrics": {
+        "default_threshold": {
+          "subset_accuracy": 0.02406417112299465,
+          "hamming_loss": 0.18380415407269626,
+          "f1_micro": 0.16999868760663195,
+          "f1_macro": 0.1376508474525284,
+          "f1_weighted": 0.30069000271325796,
+          "precision_micro": 0.0968159848522597,
+          "precision_macro": 0.08725060598007958,
+          "precision_weighted": 0.2184229096493636,
+          "recall_micro": 0.696415770609319,
+          "recall_macro": 0.6393295984501084,
+          "recall_weighted": 0.696415770609319,
+          "evaluable_labels_count": 135,
+          "total_labels_count": 138,
+          "roc_auc_micro": 0.8513898890285695,
+          "pr_auc_micro": 0.15572246896238573,
+          "roc_auc_macro": 0.8157306915867012,
+          "pr_auc_macro": 0.13440194394371147,
+          "evaluable_roc_auc_count": 135,
+          "evaluable_pr_auc_count": 135
+        },
+        "optimized_threshold": {
+          "subset_accuracy": 0.029411764705882353,
+          "hamming_loss": 0.10748469348213593,
+          "f1_micro": 0.2217857894367679,
+          "f1_macro": 0.15311357553965502,
+          "f1_weighted": 0.3251110053638076,
+          "precision_micro": 0.13787389901456354,
+          "precision_macro": 0.11572685850607337,
+          "precision_weighted": 0.25999113902829885,
+          "recall_micro": 0.5666666666666667,
+          "recall_macro": 0.40026171312955566,
+          "recall_weighted": 0.5666666666666667,
+          "evaluable_labels_count": 135,
+          "total_labels_count": 138,
+          "roc_auc_micro": 0.8513898890285695,
+          "pr_auc_micro": 0.15572246896238573,
+          "roc_auc_macro": 0.8157306915867012,
+          "pr_auc_macro": 0.13440194394371147,
+          "evaluable_roc_auc_count": 135,
+          "evaluable_pr_auc_count": 135
+        }
+      },
+      "training_history": {
+        "train_losses": [
+          1.216606255011125,
+          1.1527753309770064,
+          1.0709536736661738,
+          0.9761222611774097,
+          0.9307956684719433,
+          0.9018089836294001,
+          0.8852113203568892,
+          0.8720806663686579,
+          0.8479031844572588,
+          0.8369962193749168,
+          0.826752122965726,
+          0.8145029035481539,
+          0.8005468910390681,
+          0.7929603468288074,
+          0.7841476863080805,
+          0.7724383733489296,
+          0.7627682696689259,
+          0.7576864275065336,
+          0.7490443348884582,
+          0.7417744755744934,
+          0.7286223888397216,
+          0.7341243061152372,
+          0.7182581500573592,
+          0.714528559554707
+        ],
+        "val_losses": [
+          1.1025983095169067,
+          1.0526509930690129,
+          0.9602229098478953,
+          0.9223142067591349,
+          0.8910371114810308,
+          0.8887391189734141,
+          0.8900205790996552,
+          0.89166326324145,
+          0.8619189510742823,
+          0.8861048072576523,
+          0.8463360965251923,
+          0.8640950123469034,
+          0.8421025971571604,
+          0.8617404301961263,
+          0.838850865761439,
+          0.840408759812514,
+          0.8394837627808253,
+          0.8504270041982332,
+          0.8350749934713045,
+          0.8509237840771675,
+          0.8618737409512202,
+          0.8447854792078336,
+          0.8410837203264236,
+          0.8622356330355009
+        ],
+        "best_epoch": 19
+      },
+      "test_per_label": {
+        "alcoholic": {
+          "support": 17,
+          "evaluable": true,
+          "f1": 0.4528301886792453,
+          "precision": 0.3333333333333333,
+          "recall": 0.7058823529411765,
+          "roc_auc": 0.9377967329202543,
+          "pr_auc": 0.30256220932108574
+        },
+        "aldehydic": {
+          "support": 14,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8275593616193072,
+          "pr_auc": 0.08012520996903345
+        },
+        "alliaceous": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.13333333333333333,
+          "precision": 0.08333333333333333,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.9573225516621743,
+          "pr_auc": 0.09675880739846737
+        },
+        "almond": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9469828417196838,
+          "pr_auc": 0.10929016945410387
+        },
+        "amber": {
+          "support": 29,
+          "evaluable": true,
+          "f1": 0.21875,
+          "precision": 0.2,
+          "recall": 0.2413793103448276,
+          "roc_auc": 0.8706536856745479,
+          "pr_auc": 0.20448107372273572
+        },
+        "animal": {
+          "support": 30,
+          "evaluable": true,
+          "f1": 0.05405405405405406,
+          "precision": 0.045454545454545456,
+          "recall": 0.06666666666666667,
+          "roc_auc": 0.5839368616527391,
+          "pr_auc": 0.04739879681562753
+        },
+        "anisic": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.06060606060606061,
+          "precision": 0.03278688524590164,
+          "recall": 0.4,
+          "roc_auc": 0.7157469717362046,
+          "pr_auc": 0.03468645438374837
+        },
+        "apple": {
+          "support": 34,
+          "evaluable": true,
+          "f1": 0.20512820512820512,
+          "precision": 0.14457831325301204,
+          "recall": 0.35294117647058826,
+          "roc_auc": 0.8278134783325094,
+          "pr_auc": 0.15031718087526158
+        },
+        "apricot": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.10869565217391304,
+          "precision": 0.05952380952380952,
+          "recall": 0.625,
+          "roc_auc": 0.7972972972972973,
+          "pr_auc": 0.044283440451852625
+        },
+        "aromatic": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.0380952380952381,
+          "precision": 0.02040816326530612,
+          "recall": 0.2857142857142857,
+          "roc_auc": 0.8278388278388278,
+          "pr_auc": 0.029373327129177042
+        },
+        "balsamic": {
+          "support": 45,
+          "evaluable": true,
+          "f1": 0.38461538461538464,
+          "precision": 0.45454545454545453,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.8661450924608819,
+          "pr_auc": 0.35724652806742346
+        },
+        "banana": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.13953488372093023,
+          "precision": 0.08108108108108109,
+          "recall": 0.5,
+          "roc_auc": 0.933288409703504,
+          "pr_auc": 0.08081506609282035
+        },
+        "beefy": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.09090909090909091,
+          "precision": 0.047619047619047616,
+          "recall": 1.0,
+          "roc_auc": 0.9879356568364611,
+          "pr_auc": 0.3026315789473684
+        },
+        "bergamot": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.27586206896551724,
+          "precision": 0.17391304347826086,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.9139712488769093,
+          "pr_auc": 0.1896299533799534
+        },
+        "berry": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.025806451612903226,
+          "precision": 0.013793103448275862,
+          "recall": 0.2,
+          "roc_auc": 0.5900406504065041,
+          "pr_auc": 0.021934338725816724
+        },
+        "bitter": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7450874831763122,
+          "pr_auc": 0.03359969826690932
+        },
+        "black currant": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.1,
+          "precision": 0.07142857142857142,
+          "recall": 0.16666666666666666,
+          "roc_auc": 0.8787061994609164,
+          "pr_auc": 0.058964775794231455
+        },
+        "brandy": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.752016129032258,
+          "pr_auc": 0.013002251263789321
+        },
+        "burnt": {
+          "support": 19,
+          "evaluable": true,
+          "f1": 0.35443037974683544,
+          "precision": 0.23333333333333334,
+          "recall": 0.7368421052631579,
+          "roc_auc": 0.8974803263302289,
+          "pr_auc": 0.16757817302715583
+        },
+        "buttery": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.13636363636363635,
+          "precision": 0.07894736842105263,
+          "recall": 0.5,
+          "roc_auc": 0.8242009132420092,
+          "pr_auc": 0.09484344882469903
+        },
+        "cabbage": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9395973154362415,
+          "pr_auc": 0.04245598536000505
+        },
+        "camphoreous": {
+          "support": 19,
+          "evaluable": true,
+          "f1": 0.16806722689075632,
+          "precision": 0.1,
+          "recall": 0.5263157894736842,
+          "roc_auc": 0.8710562414266118,
+          "pr_auc": 0.11862342876204794
+        },
+        "caramellic": {
+          "support": 17,
+          "evaluable": true,
+          "f1": 0.11864406779661017,
+          "precision": 0.06930693069306931,
+          "recall": 0.4117647058823529,
+          "roc_auc": 0.7894906252514686,
+          "pr_auc": 0.10505356121090792
+        },
+        "cedar": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.2,
+          "precision": 0.11428571428571428,
+          "recall": 0.8,
+          "roc_auc": 0.9200542005420054,
+          "pr_auc": 0.09266813601228881
+        },
+        "celery": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.07329842931937172,
+          "precision": 0.038461538461538464,
+          "recall": 0.7777777777777778,
+          "roc_auc": 0.8397233498721998,
+          "pr_auc": 0.1819662907298517
+        },
+        "chamomile": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.07407407407407407,
+          "precision": 0.041666666666666664,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.9485458612975392,
+          "pr_auc": 0.08064750290360045
+        },
+        "cheesy": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.09090909090909091,
+          "precision": 0.05555555555555555,
+          "recall": 0.25,
+          "roc_auc": 0.7891891891891891,
+          "pr_auc": 0.06331903163579229
+        },
+        "cherry": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.20512820512820512,
+          "precision": 0.11764705882352941,
+          "recall": 0.8,
+          "roc_auc": 0.9744279946164198,
+          "pr_auc": 0.15042846042846042
+        },
+        "chocolate": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8821954484605087,
+          "pr_auc": 0.011235955056179775
+        },
+        "cinnamon": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.20833333333333334,
+          "precision": 0.11904761904761904,
+          "recall": 0.8333333333333334,
+          "roc_auc": 0.9712488769092543,
+          "pr_auc": 0.2914327707759911
+        },
+        "citrus": {
+          "support": 37,
+          "evaluable": true,
+          "f1": 0.18604651162790697,
+          "precision": 0.11235955056179775,
+          "recall": 0.5405405405405406,
+          "roc_auc": 0.7296537043372486,
+          "pr_auc": 0.100131066033248
+        },
+        "clean": {
+          "support": 13,
+          "evaluable": true,
+          "f1": 0.07079646017699115,
+          "precision": 0.03755868544600939,
+          "recall": 0.6153846153846154,
+          "roc_auc": 0.7420198848770277,
+          "pr_auc": 0.05221903605638284
+        },
+        "clove": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.047619047619047616,
+          "precision": 0.025,
+          "recall": 0.5,
+          "roc_auc": 0.8250670241286864,
+          "pr_auc": 0.08720930232558138
+        },
+        "cocoa": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8335894808743168,
+          "pr_auc": 0.07746448489996739
+        },
+        "coconut": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.12422360248447205,
+          "precision": 0.06666666666666667,
+          "recall": 0.9090909090909091,
+          "roc_auc": 0.8342173430368816,
+          "pr_auc": 0.0468982145307142
+        },
+        "coffee": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.3333333333333333,
+          "precision": 0.23076923076923078,
+          "recall": 0.6,
+          "roc_auc": 0.9579945799457995,
+          "pr_auc": 0.26656028475309385
+        },
+        "cognac": {
+          "support": 20,
+          "evaluable": true,
+          "f1": 0.2138364779874214,
+          "precision": 0.1223021582733813,
+          "recall": 0.85,
+          "roc_auc": 0.8728021978021978,
+          "pr_auc": 0.13053858760714496
+        },
+        "cooked": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.125,
+          "precision": 0.07692307692307693,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.9220575022461814,
+          "pr_auc": 0.06806220370949242
+        },
+        "cooling": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.023255813953488372,
+          "precision": 0.013513513513513514,
+          "recall": 0.08333333333333333,
+          "roc_auc": 0.6877264492753623,
+          "pr_auc": 0.02685454274741935
+        },
+        "cortex": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.03773584905660377,
+          "precision": 0.021739130434782608,
+          "recall": 0.14285714285714285,
+          "roc_auc": 0.6909581646423751,
+          "pr_auc": 0.03361870471237438
+        },
+        "coumarinic": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.23529411764705882,
+          "precision": 0.4,
+          "recall": 0.16666666666666666,
+          "roc_auc": 0.9088541666666667,
+          "pr_auc": 0.25779557484095145
+        },
+        "creamy": {
+          "support": 14,
+          "evaluable": true,
+          "f1": 0.11904761904761904,
+          "precision": 0.06493506493506493,
+          "recall": 0.7142857142857143,
+          "roc_auc": 0.7929155313351499,
+          "pr_auc": 0.05561225350971942
+        },
+        "cucumber": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7336010709504686,
+          "pr_auc": 0.005
+        },
+        "dairy": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.038834951456310676,
+          "precision": 0.020833333333333332,
+          "recall": 0.2857142857142857,
+          "roc_auc": 0.7584345479082322,
+          "pr_auc": 0.024355016049609907
+        },
+        "dry": {
+          "support": 33,
+          "evaluable": true,
+          "f1": 0.24719101123595505,
+          "precision": 0.19642857142857142,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.8077982623437169,
+          "pr_auc": 0.14703900270207826
+        },
+        "earthy": {
+          "support": 36,
+          "evaluable": true,
+          "f1": 0.24,
+          "precision": 0.23076923076923078,
+          "recall": 0.25,
+          "roc_auc": 0.7050171660424469,
+          "pr_auc": 0.11740742160385233
+        },
+        "ethereal": {
+          "support": 21,
+          "evaluable": true,
+          "f1": 0.48,
+          "precision": 0.41379310344827586,
+          "recall": 0.5714285714285714,
+          "roc_auc": 0.8268160083840964,
+          "pr_auc": 0.480647751184862
+        },
+        "fatty": {
+          "support": 81,
+          "evaluable": true,
+          "f1": 0.46236559139784944,
+          "precision": 0.4095238095238095,
+          "recall": 0.5308641975308642,
+          "roc_auc": 0.816526921724323,
+          "pr_auc": 0.35101104700184277
+        },
+        "fermented": {
+          "support": 25,
+          "evaluable": true,
+          "f1": 0.6046511627906976,
+          "precision": 0.7222222222222222,
+          "recall": 0.52,
+          "roc_auc": 0.906777316735823,
+          "pr_auc": 0.5548941680867187
+        },
+        "fishy": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.11764705882352941,
+          "precision": 0.07692307692307693,
+          "recall": 0.25,
+          "roc_auc": 0.7127016129032259,
+          "pr_auc": 0.03844085207133009
+        },
+        "floral": {
+          "support": 137,
+          "evaluable": true,
+          "f1": 0.4297082228116711,
+          "precision": 0.3375,
+          "recall": 0.5912408759124088,
+          "roc_auc": 0.7677075991255211,
+          "pr_auc": 0.40788874962205746
+        },
+        "fresh": {
+          "support": 54,
+          "evaluable": true,
+          "f1": 0.2,
+          "precision": 0.11607142857142858,
+          "recall": 0.7222222222222222,
+          "roc_auc": 0.6513501974597076,
+          "pr_auc": 0.10025869725780062
+        },
+        "fruit skin": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.006600660066006601,
+          "precision": 0.0033444816053511705,
+          "recall": 0.25,
+          "roc_auc": 0.40288978494623656,
+          "pr_auc": 0.0053629934091924195
+        },
+        "fruity": {
+          "support": 213,
+          "evaluable": true,
+          "f1": 0.6072874493927125,
+          "precision": 0.5338078291814946,
+          "recall": 0.704225352112676,
+          "roc_auc": 0.8020227282699312,
+          "pr_auc": 0.638758496229797
+        },
+        "garlic": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.1111111111111111,
+          "precision": 0.0625,
+          "recall": 0.5,
+          "roc_auc": 0.9549731182795699,
+          "pr_auc": 0.07485576923076923
+        },
+        "gassy": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.07407407407407407,
+          "precision": 0.038461538461538464,
+          "recall": 1.0,
+          "roc_auc": 0.9946452476572958,
+          "pr_auc": 0.2
+        },
+        "geranium": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.02666666666666667,
+          "precision": 0.014492753623188406,
+          "recall": 0.16666666666666666,
+          "roc_auc": 0.8241239892183289,
+          "pr_auc": 0.03287774518895801
+        },
+        "grape": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.08849557522123894,
+          "precision": 0.04716981132075472,
+          "recall": 0.7142857142857143,
+          "roc_auc": 0.8316946211683053,
+          "pr_auc": 0.05318830300871838
+        },
+        "grapefruit": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.30434782608695654,
+          "precision": 0.23333333333333334,
+          "recall": 0.4375,
+          "roc_auc": 0.8505806010928961,
+          "pr_auc": 0.29024479445494555
+        },
+        "grassy": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9270833333333333,
+          "pr_auc": 0.04826613376141678
+        },
+        "green": {
+          "support": 147,
+          "evaluable": true,
+          "f1": 0.4336917562724014,
+          "precision": 0.2944038929440389,
+          "recall": 0.8231292517006803,
+          "roc_auc": 0.7617576148595878,
+          "pr_auc": 0.5284080181328717
+        },
+        "hawthorn": {
+          "support": 0,
+          "evaluable": false,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "hay": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.11764705882352941,
+          "precision": 0.2,
+          "recall": 0.08333333333333333,
+          "roc_auc": 0.8875679347826088,
+          "pr_auc": 0.20303217842522625
+        },
+        "hazelnut": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9892761394101877,
+          "pr_auc": 0.15555555555555556
+        },
+        "herbal": {
+          "support": 111,
+          "evaluable": true,
+          "f1": 0.3684210526315789,
+          "precision": 0.2327790973871734,
+          "recall": 0.8828828828828829,
+          "roc_auc": 0.6992094134951279,
+          "pr_auc": 0.21863159366263268
+        },
+        "honey": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.29333333333333333,
+          "precision": 0.19298245614035087,
+          "recall": 0.6111111111111112,
+          "roc_auc": 0.8527397260273972,
+          "pr_auc": 0.20574687659988763
+        },
+        "hyacinth": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.11940298507462686,
+          "precision": 0.06349206349206349,
+          "recall": 1.0,
+          "roc_auc": 0.9721102150537634,
+          "pr_auc": 0.10575396825396824
+        },
+        "jasmin": {
+          "support": 16,
+          "evaluable": true,
+          "f1": 0.12987012987012986,
+          "precision": 0.08196721311475409,
+          "recall": 0.3125,
+          "roc_auc": 0.7551229508196722,
+          "pr_auc": 0.07293720169357351
+        },
+        "juicy": {
+          "support": 0,
+          "evaluable": false,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "ketonic": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9785809906291834,
+          "pr_auc": 0.058823529411764705
+        },
+        "lactonic": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.0625,
+          "precision": 0.058823529411764705,
+          "recall": 0.06666666666666667,
+          "roc_auc": 0.8160072760345611,
+          "pr_auc": 0.0763096431330628
+        },
+        "lavender": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.05128205128205128,
+          "precision": 0.03225806451612903,
+          "recall": 0.125,
+          "roc_auc": 0.879222972972973,
+          "pr_auc": 0.07612338689129176
+        },
+        "leafy": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.07894736842105263,
+          "precision": 0.04918032786885246,
+          "recall": 0.2,
+          "roc_auc": 0.7346975898135516,
+          "pr_auc": 0.08614520274445935
+        },
+        "leathery": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.856760374832664,
+          "pr_auc": 0.009259259259259259
+        },
+        "lemon": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.0851063829787234,
+          "precision": 0.04878048780487805,
+          "recall": 0.3333333333333333,
+          "roc_auc": 0.8358041329739443,
+          "pr_auc": 0.037511394829564074
+        },
+        "lily": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.041666666666666664,
+          "precision": 0.02197802197802198,
+          "recall": 0.4,
+          "roc_auc": 0.6940379403794038,
+          "pr_auc": 0.02239413424785675
+        },
+        "malty": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.4444444444444444,
+          "precision": 0.4,
+          "recall": 0.5,
+          "roc_auc": 0.9226675724637681,
+          "pr_auc": 0.2859971593591476
+        },
+        "meaty": {
+          "support": 30,
+          "evaluable": true,
+          "f1": 0.5609756097560976,
+          "precision": 0.4423076923076923,
+          "recall": 0.7666666666666667,
+          "roc_auc": 0.9520427112349118,
+          "pr_auc": 0.41720356899134936
+        },
+        "medicinal": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.03468208092485549,
+          "precision": 0.01764705882352941,
+          "recall": 1.0,
+          "roc_auc": 0.901565995525727,
+          "pr_auc": 0.02579908675799087
+        },
+        "melon": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.014925373134328358,
+          "precision": 0.007874015748031496,
+          "recall": 0.14285714285714285,
+          "roc_auc": 0.7202621939464044,
+          "pr_auc": 0.01775498187832941
+        },
+        "metallic": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.1,
+          "precision": 0.056818181818181816,
+          "recall": 0.4166666666666667,
+          "roc_auc": 0.6881793478260869,
+          "pr_auc": 0.034804398229850694
+        },
+        "milky": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.0718562874251497,
+          "precision": 0.03821656050955414,
+          "recall": 0.6,
+          "roc_auc": 0.7968834688346883,
+          "pr_auc": 0.04873964285859742
+        },
+        "mint": {
+          "support": 35,
+          "evaluable": true,
+          "f1": 0.21395348837209302,
+          "precision": 0.12777777777777777,
+          "recall": 0.6571428571428571,
+          "roc_auc": 0.7905029052294129,
+          "pr_auc": 0.10966312257522494
+        },
+        "muguet": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.03636363636363636,
+          "precision": 0.01910828025477707,
+          "recall": 0.375,
+          "roc_auc": 0.7271959459459459,
+          "pr_auc": 0.04138549228118904
+        },
+        "mushroom": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.08108108108108109,
+          "precision": 0.047619047619047616,
+          "recall": 0.2727272727272727,
+          "roc_auc": 0.8444554089058838,
+          "pr_auc": 0.049590210746274
+        },
+        "musk": {
+          "support": 47,
+          "evaluable": true,
+          "f1": 0.2748091603053435,
+          "precision": 0.21428571428571427,
+          "recall": 0.3829787234042553,
+          "roc_auc": 0.8595926791513643,
+          "pr_auc": 0.1916780571098373
+        },
+        "musty": {
+          "support": 14,
+          "evaluable": true,
+          "f1": 0.08695652173913043,
+          "precision": 0.1111111111111111,
+          "recall": 0.07142857142857142,
+          "roc_auc": 0.6375048657065007,
+          "pr_auc": 0.03870139774479368
+        },
+        "natural": {
+          "support": 15,
+          "evaluable": true,
+          "f1": 0.05970149253731343,
+          "precision": 0.03361344537815126,
+          "recall": 0.26666666666666666,
+          "roc_auc": 0.7346975898135516,
+          "pr_auc": 0.03733120356323839
+        },
+        "nutty": {
+          "support": 24,
+          "evaluable": true,
+          "f1": 0.29333333333333333,
+          "precision": 0.21568627450980393,
+          "recall": 0.4583333333333333,
+          "roc_auc": 0.7799263351749539,
+          "pr_auc": 0.1880324143814195
+        },
+        "odorless": {
+          "support": 69,
+          "evaluable": true,
+          "f1": 0.7586206896551724,
+          "precision": 0.7236842105263158,
+          "recall": 0.7971014492753623,
+          "roc_auc": 0.8706110862094726,
+          "pr_auc": 0.8016490916192901
+        },
+        "oily": {
+          "support": 70,
+          "evaluable": true,
+          "f1": 0.423841059602649,
+          "precision": 0.3950617283950617,
+          "recall": 0.45714285714285713,
+          "roc_auc": 0.8481352718078382,
+          "pr_auc": 0.2815100612054856
+        },
+        "onion": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.2553191489361702,
+          "precision": 0.16216216216216217,
+          "recall": 0.6,
+          "roc_auc": 0.9601626016260163,
+          "pr_auc": 0.19660208944281524
+        },
+        "orange": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.07547169811320754,
+          "precision": 0.04,
+          "recall": 0.6666666666666666,
+          "roc_auc": 0.806645617200421,
+          "pr_auc": 0.06733587462122921
+        },
+        "orangeflower": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.9445193171608266,
+          "pr_auc": 0.23218864468864467
+        },
+        "orris": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.03225806451612903,
+          "precision": 0.019230769230769232,
+          "recall": 0.1,
+          "roc_auc": 0.72289972899729,
+          "pr_auc": 0.04233433460055553
+        },
+        "ozone": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.050955414012738856,
+          "precision": 0.02631578947368421,
+          "recall": 0.8,
+          "roc_auc": 0.823956931359354,
+          "pr_auc": 0.023866953667286046
+        },
+        "peach": {
+          "support": 14,
+          "evaluable": true,
+          "f1": 0.08333333333333333,
+          "precision": 0.04878048780487805,
+          "recall": 0.2857142857142857,
+          "roc_auc": 0.69200077851304,
+          "pr_auc": 0.038858900745132624
+        },
+        "pear": {
+          "support": 11,
+          "evaluable": true,
+          "f1": 0.19047619047619047,
+          "precision": 0.2,
+          "recall": 0.18181818181818182,
+          "roc_auc": 0.8650548908350808,
+          "pr_auc": 0.11348330905722186
+        },
+        "phenolic": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.07692307692307693,
+          "precision": 0.0625,
+          "recall": 0.1,
+          "roc_auc": 0.8733062330623306,
+          "pr_auc": 0.06424371531770594
+        },
+        "pine": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.07058823529411765,
+          "precision": 0.0379746835443038,
+          "recall": 0.5,
+          "roc_auc": 0.9040880503144654,
+          "pr_auc": 0.04554917920695378
+        },
+        "pineapple": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.09615384615384616,
+          "precision": 0.05263157894736842,
+          "recall": 0.5555555555555556,
+          "roc_auc": 0.8215305969027215,
+          "pr_auc": 0.052998932992355766
+        },
+        "plum": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.5977822580645161,
+          "pr_auc": 0.008410504006806324
+        },
+        "popcorn": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.2962962962962963,
+          "precision": 0.18181818181818182,
+          "recall": 0.8,
+          "roc_auc": 0.985464333781965,
+          "pr_auc": 0.22065656565656566
+        },
+        "potato": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.07692307692307693,
+          "precision": 0.0425531914893617,
+          "recall": 0.4,
+          "roc_auc": 0.9184387617765816,
+          "pr_auc": 0.05574513863516421
+        },
+        "powdery": {
+          "support": 25,
+          "evaluable": true,
+          "f1": 0.15141955835962145,
+          "precision": 0.0821917808219178,
+          "recall": 0.96,
+          "roc_auc": 0.78,
+          "pr_auc": 0.09266616400711476
+        },
+        "pungent": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.13114754098360656,
+          "precision": 0.07547169811320754,
+          "recall": 0.5,
+          "roc_auc": 0.8635135135135135,
+          "pr_auc": 0.04859052152409134
+        },
+        "radish": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.041666666666666664,
+          "precision": 0.021739130434782608,
+          "recall": 0.5,
+          "roc_auc": 0.6025469168900804,
+          "pr_auc": 0.032974137931034486
+        },
+        "raspberry": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.043478260869565216,
+          "precision": 0.022900763358778626,
+          "recall": 0.42857142857142855,
+          "roc_auc": 0.6707152496626181,
+          "pr_auc": 0.023765036002857974
+        },
+        "ripe": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.014925373134328358,
+          "precision": 0.007692307692307693,
+          "recall": 0.25,
+          "roc_auc": 0.5604838709677419,
+          "pr_auc": 0.013109192948388002
+        },
+        "roasted": {
+          "support": 26,
+          "evaluable": true,
+          "f1": 0.42105263157894735,
+          "precision": 0.2898550724637681,
+          "recall": 0.7692307692307693,
+          "roc_auc": 0.9530683997443,
+          "pr_auc": 0.29752929904638736
+        },
+        "rose": {
+          "support": 49,
+          "evaluable": true,
+          "f1": 0.336283185840708,
+          "precision": 0.296875,
+          "recall": 0.3877551020408163,
+          "roc_auc": 0.7916849143090713,
+          "pr_auc": 0.24451711675064808
+        },
+        "rummy": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6366890380313198,
+          "pr_auc": 0.007470153177165818
+        },
+        "sandalwood": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.0821917808219178,
+          "precision": 0.046153846153846156,
+          "recall": 0.375,
+          "roc_auc": 0.9069256756756756,
+          "pr_auc": 0.0710191013427382
+        },
+        "savory": {
+          "support": 18,
+          "evaluable": true,
+          "f1": 0.3111111111111111,
+          "precision": 0.19444444444444445,
+          "recall": 0.7777777777777778,
+          "roc_auc": 0.9184931506849314,
+          "pr_auc": 0.27067924333607474
+        },
+        "sharp": {
+          "support": 4,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7940188172043011,
+          "pr_auc": 0.023151446901446902
+        },
+        "smoky": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.07407407407407407,
+          "precision": 0.04081632653061224,
+          "recall": 0.4,
+          "roc_auc": 0.9230148048452221,
+          "pr_auc": 0.05170792044416333
+        },
+        "soapy": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6324324324324324,
+          "pr_auc": 0.015836691062153428
+        },
+        "solvent": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.5725516621743036,
+          "pr_auc": 0.012203067301438268
+        },
+        "sour": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.047619047619047616,
+          "precision": 0.02857142857142857,
+          "recall": 0.14285714285714285,
+          "roc_auc": 0.7428185849238481,
+          "pr_auc": 0.04336866009378546
+        },
+        "spicy": {
+          "support": 60,
+          "evaluable": true,
+          "f1": 0.25,
+          "precision": 0.14432989690721648,
+          "recall": 0.9333333333333333,
+          "roc_auc": 0.7850532945736434,
+          "pr_auc": 0.1815887822061867
+        },
+        "strawberry": {
+          "support": 1,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6880856760374833,
+          "pr_auc": 0.004273504273504274
+        },
+        "sulfurous": {
+          "support": 33,
+          "evaluable": true,
+          "f1": 0.5242718446601942,
+          "precision": 0.38571428571428573,
+          "recall": 0.8181818181818182,
+          "roc_auc": 0.9538037719855902,
+          "pr_auc": 0.4261919675714812
+        },
+        "sweaty": {
+          "support": 2,
+          "evaluable": true,
+          "f1": 0.04878048780487805,
+          "precision": 0.02564102564102564,
+          "recall": 0.5,
+          "roc_auc": 0.7922252010723861,
+          "pr_auc": 0.02271508978826052
+        },
+        "sweet": {
+          "support": 133,
+          "evaluable": true,
+          "f1": 0.3567073170731707,
+          "precision": 0.2237093690248566,
+          "recall": 0.8796992481203008,
+          "roc_auc": 0.6867840332538664,
+          "pr_auc": 0.299059684716455
+        },
+        "tea": {
+          "support": 6,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6585804132973945,
+          "pr_auc": 0.015105124587093675
+        },
+        "terpenic": {
+          "support": 9,
+          "evaluable": true,
+          "f1": 0.1111111111111111,
+          "precision": 0.1111111111111111,
+          "recall": 0.1111111111111111,
+          "roc_auc": 0.9209141482483837,
+          "pr_auc": 0.13715561336611576
+        },
+        "tobacco": {
+          "support": 22,
+          "evaluable": true,
+          "f1": 0.1981981981981982,
+          "precision": 0.12359550561797752,
+          "recall": 0.5,
+          "roc_auc": 0.8266028049085901,
+          "pr_auc": 0.0970283620890976
+        },
+        "tomato": {
+          "support": 0,
+          "evaluable": false,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "tropical": {
+          "support": 33,
+          "evaluable": true,
+          "f1": 0.14084507042253522,
+          "precision": 0.09174311926605505,
+          "recall": 0.30303030303030304,
+          "roc_auc": 0.6399237126509854,
+          "pr_auc": 0.07667784927206543
+        },
+        "vanilla": {
+          "support": 8,
+          "evaluable": true,
+          "f1": 0.16,
+          "precision": 0.09523809523809523,
+          "recall": 0.5,
+          "roc_auc": 0.935304054054054,
+          "pr_auc": 0.11597164938559663
+        },
+        "vegetable": {
+          "support": 10,
+          "evaluable": true,
+          "f1": 0.21621621621621623,
+          "precision": 0.14814814814814814,
+          "recall": 0.4,
+          "roc_auc": 0.8502710027100271,
+          "pr_auc": 0.08000577073069869
+        },
+        "vetiver": {
+          "support": 5,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8328398384925976,
+          "pr_auc": 0.02283331039018645
+        },
+        "violet": {
+          "support": 3,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7910514541387024,
+          "pr_auc": 0.01459183817157019
+        },
+        "warm": {
+          "support": 12,
+          "evaluable": true,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7090692934782609,
+          "pr_auc": 0.029529075887547707
+        },
+        "waxy": {
+          "support": 77,
+          "evaluable": true,
+          "f1": 0.49122807017543857,
+          "precision": 0.3708609271523179,
+          "recall": 0.7272727272727273,
+          "roc_auc": 0.8774265972477597,
+          "pr_auc": 0.44520641173373465
+        },
+        "weedy": {
+          "support": 7,
+          "evaluable": true,
+          "f1": 0.03007518796992481,
+          "precision": 0.015444015444015444,
+          "recall": 0.5714285714285714,
+          "roc_auc": 0.7125506072874493,
+          "pr_auc": 0.025926561948472378
+        },
+        "winey": {
+          "support": 42,
+          "evaluable": true,
+          "f1": 0.32786885245901637,
+          "precision": 0.2127659574468085,
+          "recall": 0.7142857142857143,
+          "roc_auc": 0.8618980169971672,
+          "pr_auc": 0.3207241204826642
+        },
+        "woody": {
+          "support": 137,
+          "evaluable": true,
+          "f1": 0.6046511627906976,
+          "precision": 0.5548780487804879,
+          "recall": 0.6642335766423357,
+          "roc_auc": 0.8693836835629039,
+          "pr_auc": 0.6615291877729739
+        }
+      }
+    }
+  },
+  "phase3_comparison": {
+    "random": {
+      "xgboost": {
+        "f1_macro": 0.30655518527962283,
+        "f1_micro": 0.41531762867031374,
+        "roc_auc_macro": 0.8631411314718754,
+        "pr_auc_macro": 0.32133720302582613,
+        "train_time_sec": 673.9052835999755,
+        "inference_time_sec": 5.786752699990757
+      },
+      "pytorch_mlp": {
+        "f1_macro": 0.30239996459339535,
+        "f1_micro": 0.3955998766320551,
+        "roc_auc_macro": 0.8632028932351353,
+        "pr_auc_macro": 0.30267700290569644,
+        "train_time_sec": 69.85766420001164,
+        "inference_time_sec": 0.04290170001331717
+      },
+      "molecular_gnn": {
+        "f1_macro": 0.238512303310779,
+        "f1_micro": 0.32101524463245273,
+        "roc_auc_macro": 0.8495655248955418,
+        "pr_auc_macro": 0.218185832862264,
+        "train_time_sec": 105.38580469996668,
+        "inference_time_sec": 0.19536649994552135
+      }
+    },
+    "scaffold": {
+      "xgboost": {
+        "f1_macro": 0.203306779706368,
+        "f1_micro": 0.31812643833762017,
+        "roc_auc_macro": 0.8064048787407062,
+        "pr_auc_macro": 0.22348435047934054,
+        "train_time_sec": 559.5268711000681,
+        "inference_time_sec": 2.768549400032498
+      },
+      "pytorch_mlp": {
+        "f1_macro": 0.18016079054023884,
+        "f1_micro": 0.2747798600135471,
+        "roc_auc_macro": 0.8081662728020338,
+        "pr_auc_macro": 0.1881477199363891,
+        "train_time_sec": 27.65850879997015,
+        "inference_time_sec": 0.029502099961973727
+      },
+      "molecular_gnn": {
+        "f1_macro": 0.15311357553965502,
+        "f1_micro": 0.2217857894367679,
+        "roc_auc_macro": 0.8157306915867012,
+        "pr_auc_macro": 0.13440194394371147,
+        "train_time_sec": 85.4122139000101,
+        "inference_time_sec": 0.2350230000447482
+      }
+    }
+  }
+}
