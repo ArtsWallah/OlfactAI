@@ -29,3 +29,17 @@ class TestMolecularSimilarity:
         assert ranked[0][0] == "CCO"
         assert abs(ranked[0][1] - 1.0) < 1e-4
 
+    def test_rank_similar_molecules_invalid_k(self):
+        """Verify invalid top_k raises ValueError."""
+        service = MolecularSimilarityService()
+        with pytest.raises(ValueError, match="top_k must be positive"):
+            service.rank_similar_molecules("CCO", ["CCO", "CCCO"], top_k=0)
+
+    def test_service_search_corpus(self):
+        """Verify service delegates search_corpus to underlying engine."""
+        service = MolecularSimilarityService()
+        res = service.search_corpus("MOL_00001", top_k=3)
+        assert len(res.matches) == 3
+        assert service.engine.is_loaded
+
+
