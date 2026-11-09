@@ -1,0 +1,12 @@
+{
+  "total_molecules": 4983,
+  "total_unique_pairs": 12412653,
+  "pearson_correlation": 0.2527,
+  "spearman_correlation": 0.2631,
+  "mean_tanimoto": 0.1095,
+  "median_tanimoto": 0.093,
+  "mean_odor_jaccard": 0.0599,
+  "median_odor_jaccard": 0.0,
+  "zero_odor_overlap_total_pairs": 7646327,
+  "zero_odor_overlap_overall_proportion": 0.616
+}

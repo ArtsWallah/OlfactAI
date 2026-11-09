@@ -1,0 +1,20 @@
+{
+  "resampling_unit": "molecule",
+  "n_iterations": 100,
+  "sample_size_molecules": 1500,
+  "pearson_r_point_estimate": 0.2524,
+  "pearson_r_bootstrap_mean": 0.2524,
+  "pearson_r_bootstrap_se": 0.0094,
+  "pearson_r_ci_95": [
+    0.2351,
+    0.2699
+  ],
+  "spearman_rho_point_estimate": 0.2633,
+  "spearman_rho_bootstrap_mean": 0.2633,
+  "spearman_rho_bootstrap_se": 0.0106,
+  "spearman_rho_ci_95": [
+    0.2434,
+    0.2828
+  ],
+  "methodological_note": "Molecule-level cluster bootstrap resamples primary molecular units to preserve dyadic network dependencies. Pairs are reconstructed from the resampled subgraphs rather than assuming independent pair observations."
+}
