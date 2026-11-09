@@ -1,0 +1,53 @@
+{
+  "umap_2d_fingerprints": {
+    "embedding_type": "morgan_fingerprints",
+    "n_components": 2,
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "jaccard",
+    "random_state": 42,
+    "input_dimension": 2048,
+    "corpus_size": 4983,
+    "execution_time_seconds": 68.07,
+    "peak_memory_mb": 766.52,
+    "umap_version": "0.5.12",
+    "python_version": "3.11.18",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "scaling_applied": false,
+    "scientific_disclaimer": "UMAP is a non-linear stochastic manifold learning technique. Low-dimensional Euclidean distances do not reflect exact chemical distances or quantitative sensory perception differences. Embeddings are exploratory representations and do not prove biological olfactory categories."
+  },
+  "umap_10d_fingerprints": {
+    "embedding_type": "morgan_fingerprints",
+    "n_components": 10,
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "jaccard",
+    "random_state": 42,
+    "input_dimension": 2048,
+    "corpus_size": 4983,
+    "execution_time_seconds": 10.98,
+    "peak_memory_mb": 769.62,
+    "umap_version": "0.5.12",
+    "python_version": "3.11.18",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "scaling_applied": false,
+    "scientific_disclaimer": "UMAP is a non-linear stochastic manifold learning technique. Low-dimensional Euclidean distances do not reflect exact chemical distances or quantitative sensory perception differences. Embeddings are exploratory representations and do not prove biological olfactory categories."
+  },
+  "umap_2d_physicochemical": {
+    "embedding_type": "physicochemical_descriptors",
+    "n_components": 2,
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "euclidean",
+    "random_state": 42,
+    "input_dimension": 9,
+    "corpus_size": 4983,
+    "execution_time_seconds": 26.31,
+    "peak_memory_mb": 769.62,
+    "umap_version": "0.5.12",
+    "python_version": "3.11.18",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "scaling_applied": true,
+    "scientific_disclaimer": "Physicochemical UMAP embeds 9 standardized molecular descriptors (MW, LogP, TPSA, H-bonding, etc.). Because standard scaling treats all 9 features equally, proximity reflects shared bulk physical properties rather than fine stereochemical or circular substructural similarity."
+  }
+}
