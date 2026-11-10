@@ -175,7 +175,15 @@ class MolecularHDBSCAN:
     Supports:
     - Precomputed Jaccard distance matrices (primary Morgan fingerprint experiment).
     - Euclidean feature matrices (10D and 2D UMAP exploratory representations).
-    - Comprehensive cluster persistence and outlier extraction.
+    - Faithful extraction of library attributes:
+        * probabilities_: Membership strengths (relative density reachability, bounded in [0, 1]).
+          Note: Membership strengths are heuristic density-tree values, NOT calibrated probabilities
+          and NOT raw lambda values.
+        * cluster_persistence_: Cluster stability across condensed tree simplifications from the
+          underlying library model attribute.
+        * outlier_scores_: GLOSH (Global-Local Outlier Score from Hierarchies).
+    - Documented project convention for GLOSH: Detached singleton/noise points whose reachability
+      is undefined in the MST and evaluate to NaN are imputed to 1.0 (maximal outlier status).
     - Molecule row alignment preservation.
     """
 
@@ -191,8 +199,11 @@ class MolecularHDBSCAN:
         """Initialize HDBSCAN clustering configuration.
 
         Args:
-            min_cluster_size: Minimum size of clusters. Core hyperparameter controlling granularity.
-            min_samples: Number of samples in a neighborhood for a point to be considered core.
+            min_cluster_size: Sets the minimum group size for a selected cluster in the
+                condensed tree hierarchy (controls cluster granularity / minimum cardinality).
+            min_samples: Controls the local density requirement through the k-nearest-neighbor
+                core distance (where k = min_samples, counting the molecule itself). Defines
+                the mutual reachability distance d_mreach-k(a, b) = max(d_core(a), d_core(b), d(a, b)).
                 If None, defaults to min_cluster_size inside HDBSCAN.
             metric: Distance metric ('precomputed' or standard sklearn metric like 'euclidean').
             cluster_selection_epsilon: Distance threshold below which clusters are merged.
@@ -291,6 +302,13 @@ class MolecularHDBSCAN:
         self.fit_time_seconds_ = time.perf_counter() - t0
         self.is_fitted_ = True
         return self
+
+    @property
+    def raw_cluster_persistence(self) -> Optional[np.ndarray]:
+        """Return the raw cluster_persistence_ array directly from the underlying HDBSCAN model."""
+        if self.clusterer_ is not None and hasattr(self.clusterer_, "cluster_persistence_"):
+            return self.clusterer_.cluster_persistence_
+        return None
 
     def fit_predict(
         self,

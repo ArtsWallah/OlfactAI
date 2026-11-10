@@ -259,3 +259,82 @@ class TestMolecularHDBSCAN:
 
         np.testing.assert_array_equal(synthetic_clustered_distance_matrix, mat_copy)
 
+    def test_persistence_consistency_with_library_attribute(self, synthetic_clustered_distance_matrix):
+        """Verify that cluster persistence values match the underlying HDBSCAN model's cluster_persistence_ attribute."""
+        clusterer = MolecularHDBSCAN(min_cluster_size=5, min_samples=3, metric="precomputed")
+        clusterer.fit(synthetic_clustered_distance_matrix)
+
+        raw_pers = clusterer.raw_cluster_persistence
+        assert raw_pers is not None
+        assert isinstance(raw_pers, np.ndarray)
+
+        # Verify mapped dictionary entries match raw array values
+        unique_clusters = sorted([c for c in set(clusterer.labels_) if c != -1])
+        for idx, c_id in enumerate(unique_clusters):
+            if idx < len(raw_pers):
+                assert clusterer.cluster_persistence_[c_id] == float(raw_pers[idx])
+
+    def test_membership_strength_semantics_and_bounds(self, synthetic_clustered_distance_matrix):
+        """Verify membership strengths are bounded in [0, 1], 0 for noise, positive for core clusters."""
+        clusterer = MolecularHDBSCAN(min_cluster_size=5, min_samples=3, metric="precomputed")
+        clusterer.fit(synthetic_clustered_distance_matrix)
+
+        probs = clusterer.probabilities_
+        assert probs.shape == (len(synthetic_clustered_distance_matrix),)
+        assert (probs >= 0.0).all()
+        assert (probs <= 1.0).all()
+
+        # Noise points must have membership strength 0.0
+        noise_mask = clusterer.labels_ == -1
+        assert (probs[noise_mask] == 0.0).all()
+
+        # Clustered points should have non-zero membership strengths
+        clustered_mask = ~noise_mask
+        assert (probs[clustered_mask] > 0.0).any()
+
+    def test_glosh_outlier_score_semantics_and_nan_imputation(self):
+        """Verify GLOSH outlier scores are bounded in [0, 1] and singleton NaNs are imputed to 1.0."""
+        # Create a tiny matrix where an extreme isolated singleton exists
+        pts = np.array([
+            [0.0, 0.0],
+            [0.01, 0.01],
+            [0.02, 0.0],
+            [0.0, 0.02],
+            [100.0, 100.0],  # extreme isolated outlier
+        ])
+        from scipy.spatial.distance import pdist, squareform
+        dists = squareform(pdist(pts, metric="euclidean")).astype(np.float64)
+
+        clusterer = MolecularHDBSCAN(min_cluster_size=3, min_samples=2, metric="precomputed")
+        clusterer.fit(dists)
+
+        scores = clusterer.outlier_scores_
+        assert scores is not None
+        assert not np.isnan(scores).any()
+        assert (scores >= 0.0).all()
+        assert (scores <= 1.0).all()
+        # The isolated outlier must have a high outlier score near or equal to 1.0
+        assert scores[4] >= 0.8
+
+    def test_primary_cluster_assignments_alignment_and_integrity(self):
+        """Verify that the primary experiment artifact matches molecules.csv row-for-row with 0 NaNs."""
+        from pathlib import Path
+        repo_root = Path(__file__).resolve().parents[3]
+        primary_csv = repo_root / "backend" / "experiments" / "phase5" / "clustering" / "hdbscan_fingerprints_primary.csv"
+        mols_csv = repo_root / "backend" / "datasets" / "processed" / "molecules.csv"
+
+        if not primary_csv.exists() or not mols_csv.exists():
+            pytest.skip("Experiment artifacts not found on disk.")
+
+        df_prim = pd.read_csv(primary_csv)
+        df_mols = pd.read_csv(mols_csv)
+
+        assert len(df_prim) == 4983
+        assert list(df_prim["molecule_id"]) == list(df_mols["molecule_id"])
+        assert list(df_prim["canonical_smiles"]) == list(df_mols["canonical_smiles"])
+        assert not df_prim.isna().any().any()
+        # Ensure 37 distinct clusters (excluding -1)
+        clusters = set(df_prim["cluster_hdbscan"]) - {-1}
+        assert len(clusters) == 37
+
+
