@@ -1,0 +1,73 @@
+{
+  "dataset_size": 4983,
+  "representation_primary": "Morgan Fingerprint (radius=2, 2048-bit, chirality=True)",
+  "distance_metric": "Jaccard distance (1.0 - Tanimoto)",
+  "primary_hyperparameters": {
+    "min_cluster_size": 15,
+    "min_samples": 5,
+    "cluster_selection_method": "eom",
+    "cluster_selection_epsilon": 0.0
+  },
+  "results_summary": {
+    "n_clusters": 37,
+    "n_noise": 3873,
+    "noise_fraction": 0.7772426249247442,
+    "min_cluster_size": 15,
+    "median_cluster_size": 24.0,
+    "max_cluster_size": 88,
+    "silhouette_clustered": 0.2981710478133615,
+    "runtime_seconds": 6.4170348940000395,
+    "memory_mb": 189.44007110595703
+  },
+  "comparison_across_representations": [
+    {
+      "representation": "Primary: Morgan FP (Jaccard)",
+      "metric": "precomputed",
+      "min_cluster_size": 15,
+      "min_samples": 5,
+      "n_clusters": 37,
+      "n_noise": 3873,
+      "noise_fraction": 0.7772426249247442,
+      "median_cluster_size": 24.0,
+      "max_cluster_size": 88,
+      "clustered_mean_membership": 0.8881225019001657,
+      "silhouette_clustered": 0.2981710478133615,
+      "runtime_seconds": 4.338225359000035
+    },
+    {
+      "representation": "Exploratory: 10D UMAP (Euclidean)",
+      "metric": "euclidean",
+      "min_cluster_size": 15,
+      "min_samples": 5,
+      "n_clusters": 107,
+      "n_noise": 1225,
+      "noise_fraction": 0.24583584186233193,
+      "median_cluster_size": 30.0,
+      "max_cluster_size": 125,
+      "clustered_mean_membership": 0.8734209992779347,
+      "silhouette_clustered": 0.5606011979608536,
+      "runtime_seconds": 0.17132861100003538
+    },
+    {
+      "representation": "Visualization: 2D UMAP (Euclidean)",
+      "metric": "euclidean",
+      "min_cluster_size": 15,
+      "min_samples": 5,
+      "n_clusters": 117,
+      "n_noise": 941,
+      "noise_fraction": 0.18884206301424844,
+      "median_cluster_size": 30.0,
+      "max_cluster_size": 99,
+      "clustered_mean_membership": 0.8485848848995183,
+      "silhouette_clustered": 0.5766763869933862,
+      "runtime_seconds": 0.11060226899996906
+    }
+  ],
+  "caveats": [
+    "Cluster labels are arbitrary numerical identifiers, not categorical odor labels.",
+    "Noise molecules (-1) are valid chemical structures that reside in low-density chemical space.",
+    "Membership strengths are density-based heuristic scores, not calibrated probabilities.",
+    "Structural clusters do not automatically correspond to human odor categories.",
+    "2D UMAP clustering introduces artificial topological compression and is strictly exploratory."
+  ]
+}
