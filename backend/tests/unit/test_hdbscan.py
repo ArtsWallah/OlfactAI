@@ -258,3 +258,4 @@ class TestMolecularHDBSCAN:
         clusterer.fit(synthetic_clustered_distance_matrix)
 
         np.testing.assert_array_equal(synthetic_clustered_distance_matrix, mat_copy)
+
