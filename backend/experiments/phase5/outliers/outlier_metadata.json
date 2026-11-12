@@ -1,0 +1,30 @@
+{
+  "dataset_size": 4983,
+  "n_descriptors": 138,
+  "execution_time_seconds": 31.96,
+  "percentile_threshold": 95.0,
+  "outlier_counts": {
+    "structural_novelty": 252,
+    "local_density_sparsity": 250,
+    "hdbscan_noise": 3873,
+    "hdbscan_glosh": 3832,
+    "predictive_uncertainty": 250,
+    "annotation_rarity": 256
+  },
+  "spearman_correlations": {
+    "novelty_vs_uncertainty": 0.0303,
+    "novelty_vs_bce_loss": -0.0296,
+    "novelty_vs_density": 0.8704,
+    "novelty_vs_glosh": 0.4865,
+    "novelty_vs_annot_rarity": 0.1783
+  },
+  "plots_generated": [
+    "molecular_novelty_distribution.png",
+    "local_density_distribution.png",
+    "hdbscan_glosh_distribution.png",
+    "structural_novelty_vs_uncertainty.png",
+    "structural_novelty_vs_prediction_error.png",
+    "umap_chemical_space_outliers.png",
+    "outlier_categories_comparison.png"
+  ]
+}

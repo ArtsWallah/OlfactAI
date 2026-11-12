@@ -1,39 +1,37 @@
-# OlfactAI — Phase 5 Research Report: Molecular Similarity, Neighborhoods, Chemical Space, HDBSCAN, and Statistical Odor Enrichment
+# OlfactAI — Phase 5 Research Report: Molecular Similarity, Neighborhoods, Chemical Space, HDBSCAN, Statistical Odor Enrichment, and Molecular Outliers
 
-**Date**: November 10, 2026  
-**Status**: Step 5 (Statistical Odor-Descriptor Enrichment Analysis) Completed  
+**Date**: November 12, 2026  
+**Status**: Step 6 (Molecular Outlier Analysis) Completed  
 **Branch**: `main`  
-**Environment**: Ubuntu 24.04 (WSL2), Python 3.11.18, CPU-only PyTorch, RDKit, HDBSCAN 0.8.44, UMAP, SciPy  
+**Environment**: Ubuntu 24.04 (WSL2), Python 3.11.18, CPU-only PyTorch, RDKit, HDBSCAN 0.8.44, UMAP, SciPy, XGBoost  
 **Dataset**: OpenPOM Curated Dataset (4,983 molecules, 138 binary odor descriptors)
 
 ---
 
 ## Executive Summary
 
-Phase 5 investigates the topological and density-based structure of chemical odor space using molecular fingerprints, nearest-neighbor similarity search, global pairwise distributions, non-linear manifold learning (UMAP), unsupervised hierarchical density-based clustering (HDBSCAN), and rigorous observational statistical association testing.
+Phase 5 investigates the topological and density-based structure of chemical odor space using molecular fingerprints, nearest-neighbor similarity search, global pairwise distributions, non-linear manifold learning (UMAP), unsupervised hierarchical density-based clustering (HDBSCAN), rigorous observational statistical association testing, and dedicated multi-dimensional molecular outlier analysis.
 
-In this milestone (**Step 5: Statistical Odor-Descriptor Enrichment Analysis**), we evaluated whether specific odor descriptors from the 138 binary OpenPOM annotations are statistically significantly overrepresented or underrepresented in the 37 primary structural clusters discovered by HDBSCAN.
+In this milestone (**Step 6: Molecular Outlier Analysis**), we developed an objective framework to distinguish between five fundamentally different outlier concepts across the 4,983 OpenPOM molecules, evaluating structural novelty, local manifold sparsity, clustering reachability (GLOSH), model predictive uncertainty, and catalog annotation rarity.
 
 ```
 +----------------------------------------------------------------------------------------------------+
-|                               Statistical Odor Enrichment Architecture                             |
+|                               Multi-Dimensional Molecular Outlier Architecture                      |
 |                                                                                                    |
-|  [37 HDBSCAN Clusters] ──────┐                                                                     |
-|  (1,110 clustered molecules) │                                                                     |
-|                              ├──> [2x2 Contingency Tables] ──> [Two-Sided Fisher's Exact Test]     |
-|  [138 Binary Odor Labels] ───┘    (37 clusters x 138 descs)    (5,106 hypothesis tests)            |
-|                                                                           │                        |
-|                                                                           ▼                        |
-|                                                               [Benjamini-Hochberg FDR]             |
-|                                                               (family-wide q < 0.05)               |
-|                                                                           │                        |
-|                     ┌─────────────────────────────────────────────────────┴──────────────────┐     |
-|                     ▼                                                                        ▼     |
-|         [220 Significant Enrichments]                                            [28 Significant   |
-|         • q < 0.05, Odds Ratio > 1.0                                               Depletions]     |
-|         • 37/37 clusters exhibit >= 1 enrichment                                 • q < 0.05, OR < 1|
-|         • Max: Cluster 4 (Musk, OR=400.4, q=5.7e-38)                             • Max: Cluster 6  |
-|         • Max: Cluster 13 (Onion/Garlic, OR~740, q~10^-32)                         (Fruity, OR=0.02|
+|  [4,983 Molecules] ───────────────┬───────────────────────────────────┬───────────────────────────┐|
+|                                   │                                   │                           │|
+|                                   ▼                                   ▼                           ▼|
+|  [1. Structural Novelty]   [2. Local Density Sparsity]  [3. Clustering Outliers]  [4. Uncertainty/Loss]|
+|  • Max non-self Tanimoto   • Mean dist to 10 NNs        • HDBSCAN GLOSH score     • Predictive entropy |
+|  • NN distance (1 - sim)   • Fingerprint manifold       • 3,873 Noise (-1)        • Hamming error      |
+|  • Inorganic/Si extremes     isolation                  • High-GLOSH core mols    • BCE prediction loss|
+|                                                                                                   │|
+|                               [5. Annotation Rarity] <────────────────────────────────────────────┘|
+|                               • Descriptor count (active labels)                                   |
+|                               • Frequency-weighted rarity score                                   |
+|                                                                                                    |
+|  Key Finding: Cross-dimensional Spearman correlations prove that structural novelty does NOT       |
+|  correlate with predictive uncertainty (r = +0.030) or model error (r = -0.030).                   |
 +----------------------------------------------------------------------------------------------------+
 ```
 
@@ -250,7 +248,86 @@ In Family B (138 tests comparing $N_{\text{clustered}} = 1,110$ vs. $N_{\text{no
 
 ---
 
-## 7. Artifact Inventory
+---
+
+## 7. Molecular Outlier Analysis (Step 6)
+
+### 7.1 Multi-Dimensional Outlier Taxonomy
+
+To avoid collapsing disparate chemical and statistical phenomena into an ambiguous unified index, we evaluated five distinct outlier dimensions across all 4,983 OpenPOM molecules:
+
+1. **Structural Novelty Outliers (Nearest-Neighbor Distance)**:
+   - Evaluated in native 2,048-bit Morgan fingerprint space ($r=2$) via all-pairs Tanimoto matrix with strict self-match exclusion on the diagonal.
+   - Max non-self Tanimoto similarity range: $[0.032, 1.000]$ (Mean: $0.670 \pm 0.161$).
+   - Distance to nearest neighbor ($1.0 - \text{Tanimoto}_{\text{max}}$) range: $[0.000, 0.968]$ (Mean: $0.330$).
+2. **Local-Density Sparsity Outliers**:
+   - Mean distance to the top 10 nearest neighbors ($\text{sparsity}_{k=10} = 1.0 - \text{mean}(\text{Top10}_{\text{sim}})$).
+   - Identifies molecules situated in sparse, under-sampled regions of chemical space. Strongly correlated with nearest-neighbor distance (Spearman $r = +0.870$).
+3. **Clustering Outliers (HDBSCAN GLOSH Scores)**:
+   - Global-Local Outlier Score for Hierarchies (GLOSH) from the primary Jaccard distance tree.
+   - Evaluates reachability relative to cluster condensation. While noise molecules (`cluster = -1`) frequently possess high GLOSH scores, core cluster boundary molecules also exhibit distinct hierarchy departure.
+4. **Model Uncertainty & Error Outliers**:
+   - Model predictive entropy across 138 odor descriptors (mean: $0.362 \pm 0.053$ bits) from the trained multi-label XGBoost architecture.
+   - Prediction loss (Binary Cross-Entropy loss per molecule, mean: $0.056 \pm 0.043$; Hamming error, mean: $0.016 \pm 0.013$).
+5. **Annotation Rarity Outliers**:
+   - Total cataloged descriptors (mean: $2.14 \pm 2.05$ descriptors; 86 unannotated molecules).
+   - Frequency-weighted descriptor rarity score ($1.0 - \text{mean\_frequency}$, range: $[0.000, 0.999]$).
+
+---
+
+### 7.2 Statistical Independence & Cross-Dimension Correlations
+
+A central scientific question is whether structurally novel molecules exhibit greater model predictive uncertainty or higher prediction error. We computed pairwise Spearman rank correlations across all 4,983 molecules:
+
+| Dimension | Nearest Neighbor Distance | Local Sparsity ($k=10$) | HDBSCAN GLOSH | Annotation Count | Annotation Rarity | Predictive Entropy | BCE Loss | Hamming Error |
+|---|---|---|---|---|---|---|---|---|
+| **Nearest Neighbor Distance** | **1.000** | +0.870 | +0.487 | -0.165 | +0.178 | **+0.030** | **-0.030** | -0.035 |
+| **Local Sparsity ($k=10$)** | +0.870 | **1.000** | +0.546 | -0.241 | +0.254 | **-0.061** | **-0.128** | -0.128 |
+| **HDBSCAN GLOSH** | +0.487 | +0.546 | **1.000** | -0.149 | +0.021 | +0.121 | +0.027 | +0.007 |
+| **Annotation Count** | -0.165 | -0.241 | -0.149 | **1.000** | -0.102 | +0.289 | +0.295 | +0.252 |
+| **Annotation Rarity** | +0.178 | +0.254 | +0.021 | -0.102 | **1.000** | -0.282 | -0.214 | -0.201 |
+| **Predictive Entropy** | **+0.030** | -0.061 | +0.121 | +0.289 | -0.282 | **1.000** | **+0.806** | +0.689 |
+| **BCE Loss** | **-0.030** | -0.128 | +0.027 | +0.295 | -0.214 | **+0.806** | **1.000** | +0.932 |
+| **Hamming Error** | -0.035 | -0.128 | +0.007 | +0.252 | -0.201 | +0.689 | +0.932 | **1.000** |
+
+#### Key Empirical Finding:
+- **Structural Novelty does NOT predict Model Uncertainty or Loss**: The Spearman rank correlation between nearest-neighbor distance and predictive entropy is near zero ($r = +0.0303, p = 0.032$), and between nearest-neighbor distance and BCE prediction loss is slightly negative ($r = -0.0296, p = 0.037$).
+- **Explanation**: Multi-label classifiers output near-zero probabilities for rare descriptors when facing unfamiliar, isolated structural scaffolds (yielding low entropy and low cross-entropy loss against sparse zero labels). High entropy occurs instead for moderately familiar molecules where competing odor-active features produce ambiguous intermediate probabilities ($p \approx 0.5$).
+- **Predictive Entropy reflects Model Ambiguity, NOT Human Perceptual Ambiguity**: High entropy indicates that the statistical model cannot resolve between positive and negative training classes; it does not measure human perceptual valence or sensory pleasantness.
+
+---
+
+### 7.3 Candidate Molecule Structural Inspection
+
+We selected top representative molecules from each outlier axis and inspected their molecular formulas, functional groups, and properties:
+
+#### 1. Extreme Structural Novelty & Local Sparsity
+- **MOL_03583 (`[Zn]`, Zinc element)**:
+  - $\text{Tanimoto}_{\text{max}} = 0.0323$ (NN distance = $0.968$), $\text{sparsity}_{k=10} = 0.992$, Cluster = -1 (Noise), GLOSH = 1.0.
+  - Elemental metal with 0 on-bits in standard organic circular fingerprints; represents an inorganic artifact in an organic flavor/fragrance catalog.
+- **MOL_03582 (`[He]`, Helium element)**:
+  - $\text{Tanimoto}_{\text{max}} = 0.0500$ (NN distance = $0.950$), $\text{sparsity}_{k=10} = 0.963$, Cluster = -1, GLOSH = 1.0. Noble gas singleton.
+- **MOL_03500 (`C[Si]1(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O1`, Dodecamethylcyclohexasiloxane)**:
+  - $\text{Formula: } \text{C}_{12}\text{H}_{36}\text{O}_6\text{Si}_6$, MW = 444.93, $\text{Tanimoto}_{\text{max}} = 0.1429$, NN distance = $0.857$, Cluster = -1, GLOSH = 1.0.
+  - 12-membered cyclosiloxane ring system; rare organosilicon volatile lacking organic analogues in OpenPOM.
+- **MOL_03538 (`[O]=[V](=[O])[O][V](=[O])=[O]`, Vanadium pentoxide)** & **MOL_04591 (`[Al+3].[Al+3].[O-2].[O-2].[O-2]`, Aluminum oxide)**:
+  - Inorganic transition metal oxide salts, completely isolated from organic volatile manifolds.
+
+#### 2. Representative HDBSCAN GLOSH Outliers
+- **MOL_03258 (`CCCCCCCCCC(=O)OCCC(C)CCC=C(C)C`, Citronellyl decanoate)**:
+  - MW = 310.52, Cluster = -1, GLOSH = 1.0, $\text{Tanimoto}_{\text{max}} = 1.000$ (has an exact twin MOL_04724).
+  - Demonstrates that **HDBSCAN noise status and GLOSH = 1.0 do NOT imply structural novelty**; long-chain terpenoid esters form small isolated dyads ($N < 15$) that fail the cluster size threshold despite having high pairwise similarity.
+
+#### 3. High Predictive Uncertainty Candidates
+- **MOL_03748 (`CCCC(=O)c1cccs1`, 1-(thiophen-2-yl)butan-1-one)**:
+  - MW = 154.23, $\text{Tanimoto}_{\text{max}} = 0.7931$, Predictive Entropy = $0.523$ bits (Rank 1/4,983), BCE loss = $0.224$.
+  - Possesses competing heterocyclic and aliphatic acyl motifs that trigger intermediate probabilities across multiple savory, roasted, and fruity heads.
+- **MOL_04934 (`CC(C)=CCSC(=O)C(C)C`, S-(3-methylbut-2-en-1-yl) 2-methylpropanethioate)**:
+  - MW = 172.29, $\text{Tanimoto}_{\text{max}} = 0.6000$, Predictive Entropy = $0.517$ bits. Thioester volatile with unresolved multi-label predictions.
+
+---
+
+## 8. Artifact Inventory
 
 ### HDBSCAN Clustering (`backend/experiments/phase5/clustering/`):
 | Artifact | Type | Description |
@@ -265,36 +342,43 @@ In Family B (138 tests comparing $N_{\text{clustered}} = 1,110$ vs. $N_{\text{no
 | [`representation_comparison.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/clustering/representation_comparison.csv) | CSV | Comparative metrics between Morgan FP, 10D UMAP, and 2D UMAP. |
 | [`experiment_metadata.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/clustering/experiment_metadata.json) | JSON | Complete execution parameters, runtime, memory, and caveats. |
 
-### Odor Enrichment (`backend/experiments/phase5/enrichment/` & `plots/`):
+### Odor Enrichment (`backend/experiments/phase5/enrichment/`):
 | Artifact | Type | Description |
 |---|---|---|
-| [`cluster_odor_enrichment.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/cluster_odor_enrichment.csv) | CSV | All 5,106 tests with p-values, q-values, ORs, CIs, and directions. |
+| [`cluster_odor_enrichment.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/cluster_odor_enrichment.csv) | CSV | All 5,106 tests with p-values, q-values, ORs, exact conditional CIs, Woolf CIs, and directions. |
 | [`cluster_odor_enrichment.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/cluster_odor_enrichment.json) | JSON | Full enrichment records in JSON. |
 | [`significant_enrichments.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/significant_enrichments.csv) | CSV | 220 significant enrichments ($q < 0.05, \text{OR} > 1.0$). |
 | [`significant_depletions.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/significant_depletions.csv) | CSV | 28 significant depletions ($q < 0.05, \text{OR} < 1.0$). |
 | [`cluster_odor_prevalence.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/cluster_odor_prevalence.csv) | CSV | Full prevalence matrix for 37 clusters, background, and noise. |
 | [`global_clustered_vs_noise.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/global_clustered_vs_noise.csv) | CSV | Comparative analysis between 1,110 clustered and 3,873 noise molecules. |
-| [`enrichment_metadata.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/enrichment_metadata.json) | JSON | Pipeline metadata, execution time (12.26s), and summary counts. |
-| `cluster_odor_log2_odds_ratio_heatmap.png` | PNG | Heatmap of Haldane log2 OR across clusters and top descriptors. |
-| `significant_enrichment_overview.png` | PNG | Horizontal bar chart of top 25 significant odor enrichments. |
-| `significant_depletion_overview.png` | PNG | Horizontal bar chart of top significant odor depletions. |
-| `global_clustered_vs_noise_prevalence.png` | PNG | Comparative bar chart of descriptor frequencies in clustered vs noise. |
-| `cluster_level_prevalence_summary.png` | PNG | Most enriched descriptor per cluster vs background prevalence. |
+| [`enrichment_metadata.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/enrichment/enrichment_metadata.json) | JSON | Pipeline metadata, execution time, and summary counts. |
+
+### Molecular Outliers (`backend/experiments/phase5/outliers/` & `plots/`):
+| Artifact | Type | Description |
+|---|---|---|
+| [`molecular_outlier_profile.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/molecular_outlier_profile.csv) | CSV | Consolidated profile across all 5 outlier dimensions for 4,983 molecules. |
+| [`molecular_outlier_profile.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/molecular_outlier_profile.json) | JSON | Consolidated outlier profile in JSON format. |
+| [`cross_dimension_correlations.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/cross_dimension_correlations.csv) | CSV | Spearman rank correlation matrix across all outlier metrics. |
+| [`candidates_structural_novelty.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/candidates_structural_novelty.csv) | CSV | Top 5 structural novelty molecules with full RDKit physicochemical profiling. |
+| [`candidates_local_density.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/candidates_local_density.csv) | CSV | Top 5 sparse manifold molecules. |
+| [`candidates_hdbscan_glosh.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/candidates_hdbscan_glosh.csv) | CSV | Top 5 HDBSCAN GLOSH outlier molecules. |
+| [`candidates_predictive_entropy.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/candidates_predictive_entropy.csv) | CSV | Top 5 predictive uncertainty molecules. |
+| [`candidates_annotation_rarity.csv`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/candidates_annotation_rarity.csv) | CSV | Top 5 rare descriptor annotation molecules. |
+| [`outlier_metadata.json`](file:///c:/Users/DELL/Desktop/OlfactAI/backend/experiments/phase5/outliers/outlier_metadata.json) | JSON | Outlier counts, key correlation values, and pipeline runtime. |
+| `molecular_novelty_distribution.png` | PNG | Distribution of max non-self Tanimoto similarity (300 DPI). |
+| `local_density_distribution.png` | PNG | Distribution of average distance to 10 nearest neighbors (300 DPI). |
+| `hdbscan_glosh_distribution.png` | PNG | Distribution of HDBSCAN GLOSH outlier scores (300 DPI). |
+| `structural_novelty_vs_uncertainty.png` | PNG | Scatter plot of NN distance vs predictive entropy (300 DPI). |
+| `structural_novelty_vs_prediction_error.png` | PNG | Scatter plot of NN distance vs BCE prediction loss (300 DPI). |
+| `umap_chemical_space_outliers.png` | PNG | 2D UMAP projection highlighting structural and density outliers (300 DPI). |
+| `outlier_categories_comparison.png` | PNG | Pairwise category overlap matrix across 95th percentile cuts (300 DPI). |
 
 ---
 
-## 8. Mandatory Scientific Caveats
+## 9. Mandatory Scientific Caveats
 
-1. **Association, Not Causation**: Statistically significant enrichment demonstrates that a binary odor label is observed more frequently among molecules of a given chemical cluster than expected by chance. It **does not prove that the cluster scaffold causes the odor perception** or that all molecules possessing that scaffold will smell identical.
-2. **Binary Annotation vs. Sensory Intensity**: OpenPOM odor labels are binary tags curated from catalog descriptions. An enrichment of `garlic` at 84.6% indicates label prevalence, **not odor detection threshold, volatility, or perceived intensity**.
-3. **Arbitrary Numerical Identifiers**: Clusters are labeled numerically (0 to 36). They are **not named after sensory notes** (e.g., Cluster 4 is not called the "Musk Cluster"), avoiding reification of unsupervised density groupings into biological categories.
-4. **Noise Molecules (-1) Are Chemically Valid**: Noise molecules represent singleton scaffolds or dispersed chemotypes that lack $\ge 15$ close topological neighbors; they are chemically valid and must not be discarded or treated as errors.
-5. **Multiple Hypothesis Correction**: Because 5,106 individual tests were conducted, raw unadjusted $p$-values are statistically uninterpretable. All claims are strictly based on Benjamini-Hochberg FDR-adjusted $q$-values.
-
----
-
-## 9. Next Steps: Phase 5 Step 6 (Dedicated Molecular Outlier Analysis)
-
-With both HDBSCAN density clustering and statistical odor enrichment fully mapped:
-- **Dedicated Outlier Analysis**: Inspect the 3,873 noise molecules and quantify boundary vs. isolated structures using GLOSH outlier scores.
-- **Activity Cliffs & Structural Anomaly Mining**: Identify molecules with high structural similarity to enriched clusters that lack the corresponding odor annotation, or conversely, molecules that exhibit distinctive odor notes despite being structural outliers.
+1. **Category Distinction**: Structural novelty, density sparsity, clustering reachability, predictive entropy, and annotation rarity are conceptually distinct; they must never be conflated or combined into a single subjective "outlier score".
+2. **Noise Is Not Novelty**: Over 77% of molecules in OpenPOM are labeled as HDBSCAN noise (`cluster = -1`), but many possess high pairwise similarity to one or two peers (e.g. ester pairs like citronellyl decanoate with $\text{Tanimoto} = 1.0$). Noise reflects group size $< 15$, not structural anomaly.
+3. **Entropy Is Model Uncertainty, Not Perceptual Ambiguity**: Predictive entropy measures classifier indecision across training labels; it does not measure human perceptual valence or sensory discordance.
+4. **Dataset Selection Confounder**: Outlier status is strictly relative to the 4,983 molecules in OpenPOM. True natural product chemical space contains millions of scaffolds absent from this catalog.
+5. **No Discovery of New Chemical Entities**: This analysis identifies existing catalog entries with atypical topological or label configurations relative to OpenPOM; it does not constitute discovery or synthesis of novel chemistry.
