@@ -1,0 +1,41 @@
+{
+  "dataset_size": 4983,
+  "n_clustered": 1110,
+  "n_noise": 3873,
+  "n_clusters": 37,
+  "n_descriptors": 138,
+  "hypothesis_families": {
+    "family_a_cluster_enrichment": {
+      "description": "Cluster-specific enrichment across all non-noise clusters and descriptors",
+      "n_hypotheses": 5106,
+      "fdr_method": "Benjamini-Hochberg across all 5,106 tests simultaneously",
+      "fdr_threshold": 0.05,
+      "n_significant_enrichments": 220,
+      "n_significant_depletions": 28,
+      "clusters_with_at_least_one_enrichment": 37
+    },
+    "family_b_clustered_vs_noise": {
+      "description": "Global comparison between clustered (1,110) and noise (3,873) molecule populations",
+      "n_hypotheses": 138,
+      "fdr_method": "Benjamini-Hochberg across all 138 descriptors separately",
+      "fdr_threshold": 0.05,
+      "n_significant": 57
+    }
+  },
+  "odds_ratio_methods": {
+    "raw_odds_ratio": "Sample odds ratio (a*d)/(b*c)",
+    "exact_confidence_interval": "Exact conditional 95% CI via scipy.stats.contingency.odds_ratio",
+    "approximate_confidence_interval": "Woolf asymptotic log-normal 95% CI (NaN on zero cells)",
+    "haldane_anscombe_log2_or": "log2(((a+0.5)*(d+0.5))/((b+0.5)*(c+0.5)))"
+  },
+  "execution_time_seconds": 102.06,
+  "input_cluster_file": "backend/experiments/phase5/clustering/hdbscan_fingerprints_primary.csv",
+  "input_odor_file": "backend/datasets/processed/odor_labels.csv",
+  "plots_generated": [
+    "cluster_odor_log2_odds_ratio_heatmap.png",
+    "significant_enrichment_overview.png",
+    "significant_depletion_overview.png",
+    "global_clustered_vs_noise_prevalence.png",
+    "cluster_level_prevalence_summary.png"
+  ]
+}
